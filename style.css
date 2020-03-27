@@ -3,8 +3,11 @@
 	--background: rgb(236, 236, 236); /*Main background color*/
 	--header-footer-background: rgba(20, 20, 20, 0.9); /*Color for header and footer background*/
 	--button-background: rgba(150, 200, 255, 0.5); /*Background color for buttons*/
+	--button-hover-background: rgba(215, 234, 255, 0.6); /*Background color for buttons when the mouse hovers over it*/
 	--white-font: rgb(240, 240, 240); /*Color for all white text*/
 	--black-font: rgb(12, 12, 12); /*Color for all black text*/
+	--white-hover-font:  rgb(200, 200, 200); /*Color for all white text when the mouse hovers over it*/
+	--black-hover-font: rgb(52, 52, 52); /*Color for all black text when the mouse hovers over it*/
 }
 
 /*Main body attributes that changes everything on the website*/
@@ -13,16 +16,23 @@ body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif; /*Font stack with fonts to load in if the first one didn't work it goes to the next one*/
 	color: var(--black-font); /*Text color*/
 	margin: 0; /*Removes margins to the outerparts of the website*/
+
+	/*background-image:
+	linear-gradient(22.5deg, rgba(67, 67, 67, 0.02) 0%, rgba(67, 67, 67, 0.02) 29%,rgba(47, 47, 47, 0.02) 29%, rgba(47, 47, 47, 0.02) 37%,rgba(23, 23, 23, 0.02) 37%, rgba(23, 23, 23, 0.02) 55%,rgba(182, 182, 182, 0.02) 55%, rgba(182, 182, 182, 0.02) 69%,rgba(27, 27, 27, 0.02) 69%, rgba(27, 27, 27, 0.02) 71%,rgba(250, 250, 250, 0.02) 71%, rgba(250, 250, 250, 0.02) 100%),
+	linear-gradient(67.5deg, rgba(117, 117, 117, 0.02) 0%, rgba(117, 117, 117, 0.02) 14%,rgba(199, 199, 199, 0.02) 14%, rgba(199, 199, 199, 0.02) 40%,rgba(33, 33, 33, 0.02) 40%, rgba(33, 33, 33, 0.02) 48%,rgba(135, 135, 135, 0.02) 48%, rgba(135, 135, 135, 0.02) 60%,rgba(148, 148, 148, 0.02) 60%, rgba(148, 148, 148, 0.02) 95%,rgba(53, 53, 53, 0.02) 95%, rgba(53, 53, 53, 0.02) 100%),
+	linear-gradient(135deg, rgba(190, 190, 190, 0.02) 0%, rgba(190, 190, 190, 0.02) 6%,rgba(251, 251, 251, 0.02) 6%, rgba(251, 251, 251, 0.02) 18%,rgba(2, 2, 2, 0.02) 18%, rgba(2, 2, 2, 0.02) 27%,rgba(253, 253, 253, 0.02) 27%, rgba(253, 253, 253, 0.02) 49%,rgba(128, 128, 128, 0.02) 49%, rgba(128, 128, 128, 0.02) 76%,rgba(150, 150, 150, 0.02) 76%, rgba(150, 150, 150, 0.02) 100%),
+	linear-gradient(90deg, var(--background), var(--background));
+	min-height: 100vh;*/
 }
-/*Grid wrapper for the website*/
+/*Grid container for the website*/
 .gridContainer {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-areas:
+	display: grid; /*Defines to use grid*/
+	grid-template-columns: 1fr; /*How many columns the grid should be split into*/
+	grid-template-areas: /*How the areas of the grid should be sorted/located*/
 	"header"
 	"main"
 	"footer";
-	grid-gap: 1rem 2rem;
+	grid-gap: 1rem 2rem; /*The gap between the different grid areas*/
 }
 
 /*====================
@@ -30,80 +40,90 @@ body {
 =====================*/
 /*Header*/
 header {
-	grid-area: header;
-	background-color: var(--header-footer-background);
-	padding: 15px;
+	grid-area: header; /*Defines the grid area "header"*/
+	background-color: var(--header-footer-background); /*Background color of the header*/
+	padding: 5px; /*Padding around the header so the content isn't exactly at the edge*/
 }
 
 /*====================
 		NAV
 =====================*/
-
 /*The unordered list in the navbar*/
 nav ul {
-	display: flex;
-	flex-direction: row;
-	padding: 0px;
-	margin: 0px;
-	list-style-type: none;
+	display: flex; /*Define to use flexbox*/
+	flex-direction: row; /*Defines if the flexboxes should be in a row(-/horizontal) or in a column (|/verticaly)*/
+	padding: 0px; /*Removes the padding from the list*/
+	margin: 0px; /*Removes the margin from the list*/
+	list-style-type: none; /*Removes the dots before each item in the unordered list */
 }
+/*List items in the navbar*/
 nav li{
-	flex: 33%;
-	justify-content: center;
-	display: flex;
+	display: flex; /*Define to use flexbox*/
+	justify-content: center; /*Align the content on horizontal axis*/
+	flex: 33%; /*Lets the flexboxes grow by 33% in the defined area if possible*/
 }
 /*The text in the navbar items*/
 nav li a {
-	color: var(--white-font);
-	background-color: var(--button-background);
-	padding: 10px 25px;
-	text-align: center;
-	font-weight: bold;
-	text-decoration: none;
-	border-radius: 25px;
-	font-size: 2rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	color: var(--white-font); /*Text color*/
+	font-weight: bold; /*Makes the text bold*/
+	text-decoration: none; /*Removes the underline from the text*/
+	padding: 10px 25px; /*Padding around the a text, 10px on the height and 25 on the width*/
+	font-size: 2rem; /*Size of the font*/
+	display: flex; /*Define to use flexbox*/
+	align-items: center; /*Align the items on the vertical axis*/
+	justify-content: center; /*Align the content on horizontal axis*/
 }
+/*Attributes for the a tags in the list items in the nav bar when the mouse hovers over*/
+nav li a:hover {
+	background-color: var(--button-background); /*Background color of the a tag when the mouse hovers it*/
+	border-radius: 25px; /*Rounds the border and background color*/
+	transition: background-color 0.5s; /*Fades in the background color of the buttons over 0.5 seconds in a linear motion*/
+}
+/*Main logo image "hockey fantaster" that links to the home page in the navbar list items*/
 nav li img {
-	display: flex;
-	justify-content: center;
+	display: flex; /*Define to use flexbox*/
+	justify-content: center; /*Align the content on horizontal axis*/
+	height: 6rem; /*The height of the image*/
 }
-
-/*Main logo "hockey fantaster" that links to the home page*/
-.mainLogo {
-	height: 6rem;
-}
-
 /*====================
 		MAIN
 =====================*/
-
-
+/*Main*/
+main {
+	grid-area: main; /*Defines the grid area "main"*/
+	padding: 0px 15px; /*Padding around main so the content isn't exactly at the edge, 15px left and right while 0px up and down*/
+}
 
 /*====================
 		FOOTER
 =====================*/
 /*Footer*/
 footer {
-	grid-area: footer;
-	color: var(--white-font);
-	background-color: var(--header-footer-background);
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	padding: 15px;
-	text-align: center;
+	grid-area: footer; /*Defines the grid area "footer"*/
+	color: var(--white-font); /*Text color*/
+	background-color: var(--header-footer-background); /*Background color for the footer*/
+	display: grid; /*Defines to use grid*/
+	grid-template-columns: 1fr 1fr; /*Splits the grid into 2 columns*/
+	padding: 15px; /*Padding around the fotter so the content doesn't start at the edge*/
+	text-align: center; /*Aligns the text in the center*/
 }
+/*Footer unorered list*/
 footer ul {
-	list-style-type: none;
+	list-style-type: none; /*Removes text circle ahead of each list item in the list*/
+	margin: 0px; /*Removes margins*/
+	padding: 0px; /*Removes padding*/
 }
-footer a {
-	color: var(--white-font);
-	text-align: center;
-	font-weight: bold;
-	text-decoration: none;
-	font-size: 1rem;
+/*Footer a tags in the list items */
+footer li a {
+	color: var(--white-font); /*<Text color*/
+	text-align: center; /*Aligns the text in the center*/
+	font-weight: bold; /*Makes the text bold*/
+	text-decoration: none; /*Removes text underline*/
+	font-size: 1rem; /*Size of the text*/
+}
+/*Attributes for the a tags in the list items when the mouse hovers over*/
+footer li a:hover {
+	color: var(--white-hover-font); /*Text color*/
 }
 
 /*====================
