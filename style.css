@@ -1,9 +1,12 @@
 /*CSS variables for colors and more*/
 :root {
-	--background: rgb(236, 236, 236); /*Main background color*/
+	--background: rgb(219, 229, 235); /*Main background color*/
 	--header-footer-background: rgba(20, 20, 20, 0.9); /*Color for header and footer background*/
 	--button-background: rgba(150, 200, 255, 0.5); /*Background color for buttons*/
 	--button-hover-background: rgba(215, 234, 255, 0.6); /*Background color for buttons when the mouse hovers over it*/
+	--box-background: rgba(255, 255, 255, 0.75); /*Background color for sections and other boxes*/
+	--box-radius: 6px; /*Border radius for sections and boxes*/
+	--box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.5); /*Shadow for sections and boxes*/
 	--white-font: rgb(240, 240, 240); /*Color for all white text*/
 	--black-font: rgb(12, 12, 12); /*Color for all black text*/
 	--white-hover-font:  rgb(200, 200, 200); /*Color for all white text when the mouse hovers over it*/
@@ -32,7 +35,7 @@ body {
 	"header"
 	"main"
 	"footer";
-	grid-gap: 1rem 2rem; /*The gap between the different grid areas*/
+	grid-gap: 15px 20px; /*The gap between the different grid areas*/
 }
 
 /*====================
@@ -42,7 +45,7 @@ body {
 header {
 	grid-area: header; /*Defines the grid area "header"*/
 	background-color: var(--header-footer-background); /*Background color of the header*/
-	padding: 5px; /*Padding around the header so the content isn't exactly at the edge*/
+	padding: 0px 5px; /*Padding 0px up and down, 5px left and right*/
 }
 
 /*====================
@@ -76,7 +79,6 @@ nav li a {
 /*Attributes for the a tags in the list items in the nav bar when the mouse hovers over*/
 nav li a:hover {
 	background-color: var(--button-background); /*Background color of the a tag when the mouse hovers it*/
-	border-radius: 25px; /*Rounds the border and background color*/
 	transition: background-color 0.5s; /*Fades in the background color of the buttons over 0.5 seconds in a linear motion*/
 }
 /*Main logo image "hockey fantaster" that links to the home page in the navbar list items*/
@@ -90,8 +92,46 @@ nav li img {
 =====================*/
 /*Main*/
 main {
+	display: grid;
 	grid-area: main; /*Defines the grid area "main"*/
 	padding: 0px 15px; /*Padding around main so the content isn't exactly at the edge, 15px left and right while 0px up and down*/
+	grid-template-areas:
+	"h1"
+	"nhl"
+	"shl"
+	"other";
+	grid-gap: 15px 20px;
+}
+main h1 {
+	grid-area: h1;
+	text-align: center;
+	font-size: 2.5rem;
+}
+main section:nth-child(2) {
+	grid-area: nhl;
+	text-align: center;
+	padding: 25px;
+	background-color: var(--box-background);
+	border-radius: var(--box-radius);
+	box-shadow: var(--box-shadow);
+}
+main section:nth-child(3) {
+	grid-area: shl;
+	text-align: center;
+	padding: 25px;
+	background-color: var(--box-background);
+	border-radius: var(--box-radius);
+	box-shadow: var(--box-shadow);
+}
+main section:nth-child(4) {
+	grid-area: other;
+	text-align: center;
+	background-color: var(--box-background);
+	border-radius: var(--box-radius);
+	box-shadow: var(--box-shadow);
+}
+main section:nth-child(2) img, main section:nth-child(3) img {
+	width: 80%;
 }
 
 /*====================
@@ -129,3 +169,16 @@ footer li a:hover {
 /*====================
 	MEDIA QUERIES
 =====================*/
+
+@media only screen and (min-width: 1100px) {
+	main {
+		grid-template-columns: 1fr 12% 1fr;
+		grid-template-areas:
+		"nhl h1 shl"
+		"other other other";
+		background-image: url(images/atlantic.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+}
