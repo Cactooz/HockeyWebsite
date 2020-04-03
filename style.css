@@ -4,7 +4,7 @@
 	--header-footer-background: rgba(20, 20, 20, 0.9); /*Color for header and footer background*/
 	--button-background: rgba(150, 200, 255, 0.5); /*Background color for buttons*/
 	--button-hover-background: rgba(215, 234, 255, 0.6); /*Background color for buttons when the mouse hovers over it*/
-	--box-background: rgba(255, 255, 255, 0.75); /*Background color for sections and other boxes*/
+	--box-background: rgba(255, 255, 255, 0.85); /*Background color for sections and other boxes*/
 	--box-radius: 6px; /*Border radius for sections and boxes*/
 	--box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.5); /*Shadow for sections and boxes*/
 	--white-font: rgb(240, 240, 240); /*Color for all white text*/
@@ -66,7 +66,7 @@ nav li{
 	flex: 33%; /*Lets the flexboxes grow by 33% in the defined area if possible*/
 }
 /*The text in the navbar items*/
-nav li a {
+nav li a:not(.logo)  {
 	color: var(--white-font); /*Text color*/
 	font-weight: bold; /*Makes the text bold*/
 	text-decoration: none; /*Removes the underline from the text*/
@@ -77,7 +77,7 @@ nav li a {
 	justify-content: center; /*Align the content on horizontal axis*/
 }
 /*Attributes for the a tags in the list items in the nav bar when the mouse hovers over*/
-nav li a:hover {
+nav li a:hover:not(.logo) {
 	background-color: var(--button-background); /*Background color of the a tag when the mouse hovers it*/
 	transition: background-color 0.5s; /*Fades in the background color of the buttons over 0.5 seconds in a linear motion*/
 }
@@ -87,19 +87,15 @@ nav li img {
 	justify-content: center; /*Align the content on horizontal axis*/
 	height: 6rem; /*The height of the image*/
 }
+
 /*====================
 		MAIN
 =====================*/
 /*Main*/
-main {
+#index main {
 	display: grid;
 	grid-area: main; /*Defines the grid area "main"*/
 	padding: 0px 15px; /*Padding around main so the content isn't exactly at the edge, 15px left and right while 0px up and down*/
-	grid-template-areas:
-	"h1"
-	"nhl"
-	"shl"
-	"other";
 	grid-gap: 15px 20px;
 }
 main h1 {
@@ -107,31 +103,52 @@ main h1 {
 	text-align: center;
 	font-size: 2.5rem;
 }
-main section:nth-child(2) {
+
+/*====================
+		INDEX MAIN
+=====================*/
+/*Main*/
+#index main {
+	grid-template-areas:
+	"h1"
+	"nhl"
+	"shl"
+	"other";
+}
+#index main section.nhl {
 	grid-area: nhl;
-	text-align: center;
-	padding: 25px;
-	background-color: var(--box-background);
-	border-radius: var(--box-radius);
-	box-shadow: var(--box-shadow);
 }
-main section:nth-child(3) {
+#index main section.shl {
 	grid-area: shl;
+}
+#index main section.other {
+	grid-area: other;
+}
+#index main section.other div {
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-gap: 15px 20px;
+}
+#index main section.nhl, #index main section.shl, #index main section.other {
 	text-align: center;
 	padding: 25px;
 	background-color: var(--box-background);
 	border-radius: var(--box-radius);
 	box-shadow: var(--box-shadow);
 }
-main section:nth-child(4) {
-	grid-area: other;
-	text-align: center;
-	background-color: var(--box-background);
-	border-radius: var(--box-radius);
-	box-shadow: var(--box-shadow);
-}
-main section:nth-child(2) img, main section:nth-child(3) img {
+#index main section.nhl img, #index main section.shl img {
 	width: 80%;
+}
+
+/*====================
+		LEAGUE MAIN
+=====================*/
+#index main {
+	grid-template-areas:
+	"h1"
+	"nhl"
+	"shl"
+	"other";
 }
 
 /*====================
@@ -170,9 +187,19 @@ footer li a:hover {
 	MEDIA QUERIES
 =====================*/
 
-@media only screen and (min-width: 1100px) {
-	main {
-		grid-template-columns: 1fr 12% 1fr;
+@media only screen and (min-width: 700px) {
+	#index main {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+		"h1 h1"
+		"nhl shl"
+		"other other";
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	#index main {
+		grid-template-columns: 1fr 18% 1fr;
 		grid-template-areas:
 		"nhl h1 shl"
 		"other other other";
@@ -180,5 +207,9 @@ footer li a:hover {
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
+	}
+	#index main section.other div {
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
