@@ -91,10 +91,21 @@ nav li img {
 /*====================
 		MAIN
 =====================*/
+main {
+	padding: 0px 15px; /*Padding around main so the content isn't exactly at the edge, 15px left and right while 0px up and down*/
+	grid-gap: 15px 20px;
+}
 main h1 {
 	grid-area: h1;
 	text-align: center;
 	font-size: 2.5rem;
+}
+#index main section.nhl, #index main section.shl, #index main section.other, #league main section.teams, #league main section.middle, #league main section.standings,#league main section.highlights {
+	text-align: center;
+	padding: 25px;
+	background-color: var(--box-background);
+	border-radius: var(--box-radius);
+	box-shadow: var(--box-shadow);
 }
 
 /*====================
@@ -109,8 +120,6 @@ main h1 {
 	"nhl"
 	"shl"
 	"other";
-	padding: 0px 15px; /*Padding around main so the content isn't exactly at the edge, 15px left and right while 0px up and down*/
-	grid-gap: 15px 20px;
 }
 #index main section.nhl {
 	grid-area: nhl;
@@ -126,13 +135,6 @@ main h1 {
 	grid-template-rows: 1fr 1fr 1fr;
 	grid-gap: 15px 20px;
 }
-#index main section.nhl, #index main section.shl, #index main section.other {
-	text-align: center;
-	padding: 25px;
-	background-color: var(--box-background);
-	border-radius: var(--box-radius);
-	box-shadow: var(--box-shadow);
-}
 #index main section.nhl img, #index main section.shl img {
 	width: 80%;
 }
@@ -140,7 +142,7 @@ main h1 {
 /*====================
 		LEAGUE MAIN
 =====================*/
-#leauge main {
+#league main {
 	display: grid;
 	grid-template-areas:
 	"h1"
@@ -154,6 +156,36 @@ main h1 {
 }
 #league main section.teams {
 	grid-area: teams;
+	text-align: center;
+}
+#league main section.teams ul {
+	display: flex;
+	flex-direction: row; /*Defines if the flexboxes should be in a row(-/horizontal) or in a column (|/verticaly)*/
+	flex-wrap: wrap;
+	padding: 0px; /*Removes the padding from the list*/
+	margin: 0px; /*Removes the margin from the list*/
+	list-style-type: none; /*Removes the dots before each item in the unordered list */
+}
+#league main section.teams li{
+	display: flex; /*Define to use flexbox*/
+	justify-content: center; /*Align the content on horizontal axis*/
+}
+#league main section.teams li a  {
+	color: var(--black-font);
+	text-decoration: none; /*Removes the underline from the text*/
+	padding: 5px 20px; /*Padding around the a text, 10px on the height and 25 on the width*/
+	font-size: 1rem; /*Size of the font*/
+	display: flex; /*Define to use flexbox*/
+	align-items: center; /*Align the items on the vertical axis*/
+}
+#league main section.teams li img {
+	padding: 0px 15px;
+}
+/*Attributes for the a tags in the list items in the nav bar when the mouse hovers over*/
+#league main section.teams li a:hover {
+	background-color: var(--button-background); /*Background color of the a tag when the mouse hovers it*/
+	border-radius: var(--box-radius);
+	transition: background-color 0.5s; /*Fades in the background color of the buttons over 0.5 seconds in a linear motion*/
 }
 #league main section.standings {
 	grid-area: standings;
@@ -223,10 +255,10 @@ footer li a:hover {
 		grid-template-rows: 1fr;
 		grid-template-columns: 1fr 1fr 1fr;
 	}
-	#leauge main {
+	#league main {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-areas:
-		"h1 h1 h1"
+		". h1 ."
 		"standings middle teams"
 		"highlights highlights teams"
 	}
