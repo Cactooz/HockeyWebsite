@@ -11,6 +11,8 @@
 	--black-font: rgb(12, 12, 12); /*Color for all black text*/
 	--white-hover-font:  rgb(200, 200, 200); /*Color for all white text when the mouse hovers over it*/
 	--black-hover-font: rgb(52, 52, 52); /*Color for all black text when the mouse hovers over it*/
+	--border: 2px solid hsl(235, 77%, 12%); /*Border style for tables*/
+	--table-zebra-background: hsl(240, 3%, 60%);
 }
 
 /*Main body attributes that changes everything on the website*/
@@ -71,7 +73,7 @@ nav li a:not(.logo)  {
 	font-weight: bold; /*Makes the text bold*/
 	text-decoration: none; /*Removes the underline from the text*/
 	padding: 10px 25px; /*Padding around the a text, 10px on the height and 25 on the width*/
-	font-size: 2rem; /*Size of the font*/
+	font-size: 100%; /*Size of the font*/
 	display: flex; /*Define to use flexbox*/
 	align-items: center; /*Align the items on the vertical axis*/
 	justify-content: center; /*Align the content on horizontal axis*/
@@ -85,7 +87,7 @@ nav li a:hover:not(.logo) {
 nav li img {
 	display: flex; /*Define to use flexbox*/
 	justify-content: center; /*Align the content on horizontal axis*/
-	height: 6rem; /*The height of the image*/
+	height: 4rem; /*The height of the image*/
 }
 
 /*====================
@@ -154,12 +156,26 @@ main h1 {
 #league main section.middle {
 	grid-area: middle;
 }
+#league main section.middle .newsImage {
+	width: 100%;
+	border: var(--border);
+	border-radius: var(--box-radius);
+}
+#league main section.middle .newsButton {
+	color: var(--black-font);
+	text-decoration: none;
+
+	/*TODO: ADD MORE STYILING*/
+
+
+}
 #league main section.teams {
 	grid-area: teams;
 	text-align: center;
 }
 #league main section.teams ul {
 	display: flex;
+	justify-content: space-evenly;
 	flex-direction: row; /*Defines if the flexboxes should be in a row(-/horizontal) or in a column (|/verticaly)*/
 	flex-wrap: wrap;
 	padding: 0px; /*Removes the padding from the list*/
@@ -168,7 +184,6 @@ main h1 {
 }
 #league main section.teams li{
 	display: flex; /*Define to use flexbox*/
-	justify-content: center; /*Align the content on horizontal axis*/
 }
 #league main section.teams li a  {
 	color: var(--black-font);
@@ -189,6 +204,22 @@ main h1 {
 }
 #league main section.standings {
 	grid-area: standings;
+}
+#league main section.standings table {
+	width: 65%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#league main section.standings table, #league main section.standings tr {
+	border: var(--border);
+	border-collapse: collapse;
+}
+#league main section.standings td, #league main section.standings th {
+	padding: 5px;
+}
+#league main section.standings tr:nth-child(even) {
+	background-color: var(--table-zebra-background);
+	color: var(--white-font);
 }
 #league main section.highlights {
 	grid-area: highlights;
@@ -238,6 +269,12 @@ footer li a:hover {
 		"nhl shl"
 		"other other";
 	}
+	nav li a:not(.logo)  {
+		font-size: 1.75rem;
+	}
+	nav li img {
+		height: 6rem; /*The height of the image*/
+	}
 }
 
 @media only screen and (min-width: 1200px) {
@@ -260,6 +297,6 @@ footer li a:hover {
 		grid-template-areas:
 		". h1 ."
 		"standings middle teams"
-		"highlights highlights teams"
+		"highlights highlights highlights"
 	}
 }
