@@ -91,13 +91,6 @@ nav li img {
 /*====================
 		MAIN
 =====================*/
-/*Main*/
-#index main {
-	display: grid;
-	grid-area: main; /*Defines the grid area "main"*/
-	padding: 0px 15px; /*Padding around main so the content isn't exactly at the edge, 15px left and right while 0px up and down*/
-	grid-gap: 15px 20px;
-}
 main h1 {
 	grid-area: h1;
 	text-align: center;
@@ -109,11 +102,15 @@ main h1 {
 =====================*/
 /*Main*/
 #index main {
+	display: grid;
+	grid-area: main; /*Defines the grid area "main"*/
 	grid-template-areas:
 	"h1"
 	"nhl"
 	"shl"
 	"other";
+	padding: 0px 15px; /*Padding around main so the content isn't exactly at the edge, 15px left and right while 0px up and down*/
+	grid-gap: 15px 20px;
 }
 #index main section.nhl {
 	grid-area: nhl;
@@ -143,12 +140,26 @@ main h1 {
 /*====================
 		LEAGUE MAIN
 =====================*/
-#index main {
+#leauge main {
+	display: grid;
 	grid-template-areas:
 	"h1"
-	"nhl"
-	"shl"
-	"other";
+	"middle"
+	"teams"
+	"standings"
+	"highlights";
+}
+#league main section.middle {
+	grid-area: middle;
+}
+#league main section.teams {
+	grid-area: teams;
+}
+#league main section.standings {
+	grid-area: standings;
+}
+#league main section.highlights {
+	grid-area: highlights;
 }
 
 /*====================
@@ -211,5 +222,12 @@ footer li a:hover {
 	#index main section.other div {
 		grid-template-rows: 1fr;
 		grid-template-columns: 1fr 1fr 1fr;
+	}
+	#leauge main {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas:
+		"h1 h1 h1"
+		"standings middle teams"
+		"highlights highlights teams"
 	}
 }
