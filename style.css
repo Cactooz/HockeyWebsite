@@ -5,7 +5,7 @@
 	--button-background: rgba(150, 200, 255, 0.5); /*Background color for buttons*/
 	--button-hover-background: rgba(215, 234, 255, 0.6); /*Background color for buttons when the mouse hovers over it*/
 	--box-background: rgba(255, 255, 255, 0.85); /*Background color for sections and other boxes*/
-	--box-radius: 6px; /*Border radius for sections and boxes*/
+	--border-radius: 6px; /*Border radius for sections and boxes*/
 	--box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.5); /*Shadow for sections and boxes*/
 	--white-font: rgb(240, 240, 240); /*Color for all white text*/
 	--black-font: rgb(12, 12, 12); /*Color for all black text*/
@@ -47,7 +47,6 @@ body {
 header {
 	grid-area: header; /*Defines the grid area "header"*/
 	background-color: var(--header-footer-background); /*Background color of the header*/
-	padding: 0px 5px; /*Padding 0px up and down, 5px left and right*/
 }
 
 /*====================
@@ -83,6 +82,9 @@ nav li a:hover:not(.logo) {
 	background-color: var(--button-background); /*Background color of the a tag when the mouse hovers it*/
 	transition: background-color 0.5s; /*Fades in the background color of the buttons over 0.5 seconds in a linear motion*/
 }
+nav li a.active {
+	background-color: var(--button-background); /*Background color of the a tag when the mouse hovers it*/
+}
 /*Main logo image "hockey fantaster" that links to the home page in the navbar list items*/
 nav li img {
 	display: flex; /*Define to use flexbox*/
@@ -106,7 +108,7 @@ main h1 {
 	text-align: center;
 	padding: 25px;
 	background-color: var(--box-background);
-	border-radius: var(--box-radius);
+	border-radius: var(--border-radius);
 	box-shadow: var(--box-shadow);
 }
 
@@ -159,15 +161,20 @@ main h1 {
 #league main section.middle .newsImage {
 	width: 100%;
 	border: var(--border);
-	border-radius: var(--box-radius);
+	border-radius: var(--border-radius);
 }
 #league main section.middle .newsButton {
 	color: var(--black-font);
 	text-decoration: none;
-
-	/*TODO: ADD MORE STYILING*/
-
-
+	background-color: var(--button-background);
+	padding: 10px 25px;
+	border: var(--border);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+}
+#league main section.middle .newsButton:hover {
+	color: var(--black-font);
+	background-color: var(--button-hover-background);
 }
 #league main section.teams {
 	grid-area: teams;
@@ -200,7 +207,7 @@ main h1 {
 /*Attributes for the a tags in the list items in the nav bar when the mouse hovers over*/
 #league main section.teams li a:hover {
 	background-color: var(--button-background); /*Background color of the a tag when the mouse hovers it*/
-	border-radius: var(--box-radius);
+	border-radius: var(--border-radius);
 	transition: background-color 0.5s; /*Fades in the background color of the buttons over 0.5 seconds in a linear motion*/
 }
 #league main section.standings {
