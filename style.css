@@ -12,7 +12,7 @@
 	--white-hover-font:  rgb(200, 200, 200); /*Color for all white text when the mouse hovers over it*/
 	--black-hover-font: rgb(52, 52, 52); /*Color for all black text when the mouse hovers over it*/
 	--border: 2px solid hsl(235, 77%, 12%); /*Border style for tables*/
-	--table-zebra-background: hsl(240, 3%, 60%);
+	--table-zebra-background: hsla(240, 3%, 60%, 0.8); /*Zebra stribing for tabel color*/
 }
 
 /*Main body attributes that changes everything on the website*/
@@ -103,6 +103,7 @@ main h1 {
 	grid-area: h1;
 	text-align: center;
 	font-size: 2.5rem;
+	text-transform: uppercase; /*Makes the text uppercase letters*/
 }
 #index main section.nhl, #index main section.shl, #index main section.other, #league main section.teams, #league main section.middle, #league main section.standings,#league main section.highlights {
 	text-align: center;
@@ -245,6 +246,27 @@ main h1 {
 	height: 330px;
 }
 
+/*====================
+		TIPS
+=====================*/
+form input:not(.submitButton) {
+	padding: 5px;
+	border-radius: var(--border-radius);
+}
+form input:focus:not(.submitButton) {
+	background-color: var(--button-hover-background);
+}
+form input[type=submit] {
+	background-color: #4CAF50;
+	color: var(--white-font);
+	padding: 5px;
+	text-decoration: none;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+form input[type=submit]:focus {
+	background-color: rgb(30, 71, 32);
+}
 /*====================
 		FOOTER
 =====================*/

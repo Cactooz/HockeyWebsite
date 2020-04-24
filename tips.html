@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="sv">
+	<head>
+		<meta charset="UTF-8">
+		<title>Hockey Fantaster - Nyhetsbrev</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="style.css" rel="stylesheet">
+		<link href="images/hockey_fantaster_icon.ico" rel="icon">
+	</head>
+	<body id="league">
+		<div class="gridContainer">
+			<header>
+				<nav>
+					<ul>
+						<li>
+							<a href="nhl.html">NHL</a>
+						</li>
+						<li>
+							<a href="index.html" class="logo"><img src="images/hockey_fantaster_logo.png" alt="Hockey Fantaster Logga"></a>
+						</li>
+						<li>
+							<a href="shl.html">SHL</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<main>
+				<h1>Tipsa oss</h1>
+				<p></p>
+				<form>
+					<fieldset>
+						<legend>Namn</legend>
+						<label for="name">Ditt namn: </label>
+						<input type="text" id="name" name="name" placeholder="Anders Andersson" pattern="[A-Öa-ö',. ]{2,}" title="Minst två bokstäver, ex. Anders Andersson" required>
+						<p>Vill du att ditt namn ska visas på sidan?</p>
+						<label for="showName">Ja</label>
+						<input type="radio" id="showName" name="nameVisibility" value="true">
+						<label for="hideName">Nej</label>
+						<input type="radio" id="hideName" name="nameVisibility" value="false">
+					</fieldset>
+					<fieldset>
+						<legend>Kontakt</legend>
+						<label for="email">Epost: </label>
+						<input type="email" id="email" name="email" placeholder="namn@domän.se" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="namn@domän.se" required>
+						<label for="phonenumber">Telefonnummer: </label>
+						<input type="tel" id="phonenumber" name="phonenumber" placeholder="0701-23 45 67" pattern="([(+]*[0-9]+[()+. -]*){5,}" title="Minst 5 siffror, ex. 0701-23 45 67">
+					</fieldset>
+					<fieldset>
+						<legend>Information</legend>
+						<label for="date">Vilket datum hände det? </label>
+						<input type="date" id="date" name="date" pattern="[0-9]{5,}" title="Format: 2020-01-31" min="1900-01-01" max="2100-12-31" required>
+					</fieldset>
+
+
+					<input type="submit" value="Skicka" class="submitButton">
+				</form>
+			</main>
+			<footer>
+				<div>
+					<p>© Copyright Hugo Bachér 2020</p>
+				</div>
+				<section>
+					<ul>
+						<li>
+							<a href="nhl.html">NHL</a>
+						</li>
+						<li>
+							<a href="shl.html">SHL</a>
+						</li>
+						<li>
+							<a href="tips.html">Tipsa oss</a>
+						</li>
+					</ul>
+				</section>
+			</footer>
+		</div>
+	</body>
+</html>
