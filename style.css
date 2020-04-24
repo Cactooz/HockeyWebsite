@@ -224,6 +224,17 @@ main h1 {
 #league main section.highlights {
 	grid-area: highlights;
 }
+#league main section.highlightVideos {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+#league main section.highlightVideos iframe {
+	flex: 25%;
+	padding: 10px;
+	border: none;
+}
 
 /*====================
 		FOOTER
