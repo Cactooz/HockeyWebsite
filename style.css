@@ -249,24 +249,57 @@ main h1 {
 /*====================
 		TIPS
 =====================*/
-form input:not(.submitButton) {
+#tips main {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 95%;
+	grid-template-areas:
+	"h1"
+	"form";
+}
+#tips form {
+	grid-area: form;
+	text-align: center;
+}
+#tips form fieldset {
+	margin: 15px;
+	border-radius: var(--border-radius);
+	border: var(--border);
+	box-shadow: var(--box-shadow);
+}
+#tips form legend {
+	font-size: 1.3rem;
+	font-weight: bold;
+}
+#tips form input:not(.submitButton), #tips form textarea {
 	padding: 5px;
 	border-radius: var(--border-radius);
 }
-form input:focus:not(.submitButton) {
+#tips form input:focus:not(.submitButton) {
 	background-color: var(--button-hover-background);
 }
-form input[type=submit] {
+#tips form input[type=submit] {
 	background-color: #4CAF50;
 	color: var(--white-font);
-	padding: 5px;
+	font-size: 1rem;
 	text-decoration: none;
+	padding: 5px;
 	margin: 4px 2px;
+	width: 5rem;
+	height: 3rem;
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
 	cursor: pointer;
 }
-form input[type=submit]:focus {
+#tips form input[type=submit]:focus {
 	background-color: rgb(30, 71, 32);
 }
+#tips form textarea {
+	width: 95%;
+	height: 15rem;
+	margin-top: 10px;
+}
+
 /*====================
 		FOOTER
 =====================*/
@@ -340,5 +373,12 @@ footer li a:hover {
 		". h1 ."
 		"standings middle teams"
 		"highlights highlights highlights"
+	}
+	#tips main {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas:
+		"h1 h1 h1"
+		". form .";
 	}
 }

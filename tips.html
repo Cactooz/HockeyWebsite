@@ -7,7 +7,7 @@
 		<link href="style.css" rel="stylesheet">
 		<link href="images/hockey_fantaster_icon.ico" rel="icon">
 	</head>
-	<body id="league">
+	<body id="tips">
 		<div class="gridContainer">
 			<header>
 				<nav>
@@ -25,34 +25,53 @@
 				</nav>
 			</header>
 			<main>
+				<!--Den viktigaste rubriken-->
 				<h1>Tipsa oss</h1>
-				<p></p>
-				<form>
+				<!--Start av ett formulär, när man skickar in formuläret tar den dig till första sidan och sparar inte dina svar i url:n, formuläret har id tipsform-->
+				<form method="post" action="index.html">
+					<!--En del av fomruläret-->
 					<fieldset>
-						<legend>Namn</legend>
-						<label for="name">Ditt namn: </label>
+						<legend>Namn</legend><!--Namn på formulärdelen-->
+						<label for="name">Ditt namn: </label> <!--Ett namn för input som heter name-->
+						<!--Input där användaren kan fylla i data, placeholder: från början står det Anders Andersson, pattern: man får bara använda bokstäver och minst två av dem,
+							title förklarar vilket format som behövs, requred: man måste fylla i denna inputen-->
 						<input type="text" id="name" name="name" placeholder="Anders Andersson" pattern="[A-Öa-ö',. ]{2,}" title="Minst två bokstäver, ex. Anders Andersson" required>
 						<p>Vill du att ditt namn ska visas på sidan?</p>
 						<label for="showName">Ja</label>
-						<input type="radio" id="showName" name="nameVisibility" value="true">
+						<!--Input radio knapp där man kan välja antingen ja eller nej-->
+						<input type="radio" id="showName" name="nameVisibility" value="true" required>
 						<label for="hideName">Nej</label>
-						<input type="radio" id="hideName" name="nameVisibility" value="false">
+						<input type="radio" id="hideName" name="nameVisibility" value="false" required>
 					</fieldset>
 					<fieldset>
 						<legend>Kontakt</legend>
 						<label for="email">Epost: </label>
+						<!--Input för email, den den tillåter endast en giltig mailadress-->
 						<input type="email" id="email" name="email" placeholder="namn@domän.se" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="namn@domän.se" required>
+						<br> <!--Gör en radbrytning så Telefonnummer börjar på nästa rad-->
 						<label for="phonenumber">Telefonnummer: </label>
+						<!--Input för telefonnummer, tillåter endast siffror-->
 						<input type="tel" id="phonenumber" name="phonenumber" placeholder="0701-23 45 67" pattern="([(+]*[0-9]+[()+. -]*){5,}" title="Minst 5 siffror, ex. 0701-23 45 67">
 					</fieldset>
 					<fieldset>
 						<legend>Information</legend>
 						<label for="date">Vilket datum hände det? </label>
-						<input type="date" id="date" name="date" pattern="[0-9]{5,}" title="Format: 2020-01-31" min="1900-01-01" max="2100-12-31" required>
+						<!--Input för datum, får endast använda siffror och datumet måste vara mellan första januari 1900 och 31 december 2100-->
+						<input type="date" id="date" name="date" title="Format: 2020-01-31" min="1900-01-01" max="2100-12-31" required>
 					</fieldset>
-
-
-					<input type="submit" value="Skicka" class="submitButton">
+					<fieldset>
+						<legend>Ditt tips</legend>
+						<label for="textarea">Beskriv tipset: </label>
+						<!--En textarea där man kan fylla i text, kräver minst 20 tecken och max 2000 tecken-->
+						<textarea id="textarea" name="textarea" maxlength="2000" minlength="20" placeholder="Beskriv i detalj om ditt tips. Ju mer desto bättre!" required></textarea>
+					</fieldset>
+					<fieldset>
+						<legend>Ladda upp bild</legend>
+						<!--Möjlighet att ladda upp en fil, endast bildfiler är tillåtna, det är inte tvunget att ladda upp en bild-->
+						<input type="file" id="fileupload" name="fileupload" accept="image/*">
+					</fieldset>
+					<!--Knapp som skickar in formuläret-->
+					<input type="submit" value="send" class="submitButton">
 				</form>
 			</main>
 			<footer>
