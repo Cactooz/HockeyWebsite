@@ -21,7 +21,7 @@
 /*Main body attributes that changes everything on the website*/
 body {
 	background-color: var(--background); /*Changes background color on the whole page*/
-	font-family: Verdana, Geneva, Tahoma, sans-serif; /*Font stack with fonts to load in if the first one didn't work it goes to the next one*/
+	font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif; /*Font stack with fonts to load in if the first one didn't work it goes to the next one*/
 	color: var(--black-font); /*Text color*/
 	margin: 0; /*Removes margins to the outerparts of the website*/
 
@@ -111,7 +111,7 @@ h1 {
 	font-size: 2.5rem;
 	text-transform: uppercase; /*Makes the text uppercase letters*/
 }
-#index main section.nhl, #index main section.shl, #index main section.other, #league main section.teams, #league main section.middle, #league main section.standings, #league main section.highlights, #history main section {
+#index main section.nhl, #index main section.shl, #index main section.other, #league main section.teams, #league main section.middle, #league main section.standings, #league main section.highlights, #history main section, #news main article {
 	text-align: center;
 	padding: 25px;
 	background-color: var(--box-background);
@@ -257,12 +257,10 @@ h1 {
 =====================*/
 #tips main {
 	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: auto 65% 30%;
 	grid-template-areas:
 	"h1"
 	"form"
-	"smiley";
+	"thanks";
 }
 #tips form {
 	grid-area: form;
@@ -291,11 +289,16 @@ h1 {
 	height: 15rem;
 	margin-top: 10px;
 }
+#tips main section {
+	grid-area: thanks;
+	margin: auto;
+}
 #tips svg {
-	grid-area: smiley;
-	position: relative;
 	margin: auto;
 	padding: 25px;
+}
+#tips video {
+	width: 80%;
 }
 #tips form :optional:not(.submitButton) {
 	background: linear-gradient(90deg,rgba(255,255,255,1) 20%, rgba(202,246,255,1) 100%);
@@ -330,8 +333,6 @@ h1 {
 
 #history main {
 	display: grid;
-	grid-template-rows: auto 1fr 1fr;
-	grid-template-columns: 1fr;
 	grid-template-areas: 
 	"h1"
 	"past"
@@ -358,6 +359,41 @@ h1 {
 	font-weight: bold;
 }
 
+/*====================
+		NYHETER
+=====================*/
+#news main {
+	display: grid;
+	grid-template-areas: 
+	"h1"
+	"article1"
+	"article2"
+	"article3"
+	"article4";
+}
+
+#news main article:nth-child(2) {
+	grid-area: "article1";
+}
+#news main article:nth-child(3) {
+	grid-area: "article2";
+}
+#news main article:nth-child(4) {
+	grid-area: "article3";
+}
+#news main article:nth-child(5) {
+	grid-area: "article4";
+}
+
+#news main article img {
+	width:75%;
+	border: var(--border);
+	border-radius: var(--border-radius)
+}
+
+#news main article ol {
+	list-style-type: none;
+}
 
 /*====================
 		FOOTER
@@ -417,7 +453,7 @@ footer li a:focus {
 
 @media only screen and (min-width: 1200px) {
 	#index main {
-		grid-template-columns: 1fr 18% 1fr;
+		grid-template-columns: 1fr 17.5rem 1fr;
 		grid-template-areas:
 		"nhl h1 shl"
 		"other other other";
@@ -438,18 +474,25 @@ footer li a:focus {
 		"highlights highlights highlights"
 	}
 	#tips main {
-		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-areas:
 		"h1 h1 h1"
 		". form ."
-		". smiley .";
+		". thanks .";
 	}
 	#history main {
-		display: grid;
-		grid-template-rows: auto 1fr;
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas: 
 		"h1 h1"
 		"past future";
+	}
+	#news main {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 
+		"h1 h1"
+		"article article"
+		"article article";
+	}
+	#tips video {
+		width: auto;
 	}
 }
