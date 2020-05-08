@@ -4,6 +4,7 @@
 	--header-footer-background: rgba(20, 20, 20, 0.9); /*Color for header and footer background*/
 	--button-background: rgba(150, 200, 255, 0.5); /*Background color for buttons*/
 	--button-hover-background: rgba(215, 234, 255, 0.6); /*Background color for buttons when the mouse hovers over it*/
+	--button-focus-background: rgba(233, 231, 255, 0.6); /*Background color for buttons when its in focus (clicked)*/
 	--box-background: rgba(255, 255, 255, 0.85); /*Background color for sections and other boxes*/
 	--border-radius: 6px; /*Border radius for sections and boxes*/
 	--box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.5); /*Shadow for sections and boxes*/
@@ -11,6 +12,8 @@
 	--black-font: rgb(12, 12, 12); /*Color for all black text*/
 	--white-hover-font:  rgb(200, 200, 200); /*Color for all white text when the mouse hovers over it*/
 	--black-hover-font: rgb(52, 52, 52); /*Color for all black text when the mouse hovers over it*/
+	--white-focus-font:  rgb(160, 160, 160); /*Color for all white text when its in focus (clicked)*/
+	--black-focus-font: rgb(100, 100, 100); /*Color for all black text when its in focus (clicked)*/
 	--border: 2px solid hsl(235, 77%, 12%); /*Border style for tables*/
 	--table-zebra-background: hsla(240, 3%, 60%, 0.8); /*Zebra stribing for tabel color*/
 }
@@ -79,8 +82,11 @@ nav li a:not(.logo)  {
 }
 /*Attributes for the a tags in the list items in the nav bar when the mouse hovers over*/
 nav li a:hover:not(.logo) {
-	background-color: var(--button-background); /*Background color of the a tag when the mouse hovers it*/
+	background-color: var(--button-hover-background-background); /*Background color of the a tag when the mouse hovers it*/
 	transition: background-color 0.5s; /*Fades in the background color of the buttons over 0.5 seconds in a linear motion*/
+}
+nav li a:focus:not(.logo) {
+	background-color: var(--button-focus-background-background); /*Background color of the a tag when the mouse hovers it*/
 }
 nav li a.active {
 	background-color: var(--button-background); /*Background color of the a tag when the mouse hovers it*/
@@ -99,13 +105,13 @@ main {
 	padding: 0px 15px; /*Padding around main so the content isn't exactly at the edge, 15px left and right while 0px up and down*/
 	grid-gap: 15px 20px;
 }
-main h1 {
+h1 {
 	grid-area: h1;
 	text-align: center;
 	font-size: 2.5rem;
 	text-transform: uppercase; /*Makes the text uppercase letters*/
 }
-#index main section.nhl, #index main section.shl, #index main section.other, #league main section.teams, #league main section.middle, #league main section.standings,#league main section.highlights {
+#index main section.nhl, #index main section.shl, #index main section.other, #league main section.teams, #league main section.middle, #league main section.standings, #league main section.highlights, #history main section {
 	text-align: center;
 	padding: 25px;
 	background-color: var(--box-background);
@@ -201,15 +207,15 @@ main h1 {
 	display: flex; /*Define to use flexbox*/
 	align-items: center; /*Align the items on the vertical axis*/
 }
-#league main section.teams li img {
-	padding: 0px 15px;
-	height: 35px;
-}
 /*Attributes for the a tags in the list items in the nav bar when the mouse hovers over*/
 #league main section.teams li a:hover {
 	background-color: var(--button-background); /*Background color of the a tag when the mouse hovers it*/
 	border-radius: var(--border-radius);
 	transition: background-color 0.5s; /*Fades in the background color of the buttons over 0.5 seconds in a linear motion*/
+}
+#league main section.teams li img {
+	padding: 0px 15px;
+	height: 35px;
 }
 #league main section.standings {
 	grid-area: standings;
@@ -252,10 +258,11 @@ main h1 {
 #tips main {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: auto 95%;
+	grid-template-rows: auto 65% 30%;
 	grid-template-areas:
 	"h1"
-	"form";
+	"form"
+	"smiley";
 }
 #tips form {
 	grid-area: form;
@@ -271,12 +278,31 @@ main h1 {
 	font-size: 1.3rem;
 	font-weight: bold;
 }
-#tips form input:not(.submitButton), #tips form textarea {
+#tips form input:not(.submitButton), #tips form textarea, #tips form select {
 	padding: 5px;
+	margin: 5px;
 	border-radius: var(--border-radius);
 }
 #tips form input:focus:not(.submitButton) {
 	background-color: var(--button-hover-background);
+}
+#tips form textarea {
+	width: 95%;
+	height: 15rem;
+	margin-top: 10px;
+}
+#tips svg {
+	grid-area: smiley;
+	position: relative;
+	margin: auto;
+	padding: 25px;
+}
+#tips form :optional:not(.submitButton) {
+	background: linear-gradient(90deg,rgba(255,255,255,1) 20%, rgba(202,246,255,1) 100%);
+}
+
+#tips form :required:not(.submitButton) {
+	background: linear-gradient(90deg,rgba(255,255,255,1) 50%, rgb(214, 216, 255) 100%);
 }
 #tips form input[type=submit] {
 	background-color: #4CAF50;
@@ -291,14 +317,47 @@ main h1 {
 	box-shadow: var(--box-shadow);
 	cursor: pointer;
 }
+#tips form input[type=submit]:hover {
+	background-color: rgb(51, 136, 54);
+}
 #tips form input[type=submit]:focus {
 	background-color: rgb(30, 71, 32);
 }
-#tips form textarea {
-	width: 95%;
-	height: 15rem;
-	margin-top: 10px;
+
+/*====================
+		HISTORIA
+=====================*/
+
+#history main {
+	display: grid;
+	grid-template-rows: auto 1fr 1fr;
+	grid-template-columns: 1fr;
+	grid-template-areas: 
+	"h1"
+	"past"
+	"future";
 }
+
+#history main .past {
+	grid-area: past;
+}
+
+#history main .future {
+	grid-area: future;
+}
+
+#history main section {
+	text-align: center;
+}
+
+#history main p::first-letter {
+	font-size: 2.5ex;
+}
+
+#history main p::first-line {
+	font-weight: bold;
+}
+
 
 /*====================
 		FOOTER
@@ -330,6 +389,10 @@ footer li a {
 /*Attributes for the a tags in the list items when the mouse hovers over*/
 footer li a:hover {
 	color: var(--white-hover-font); /*Text color*/
+}
+/*Attributes for the a tags in the list items when the mouse hovers over*/
+footer li a:focus {
+	color: var(--white-focus-font); /*Text color*/
 }
 
 /*====================
@@ -375,10 +438,18 @@ footer li a:hover {
 		"highlights highlights highlights"
 	}
 	#tips main {
-		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-areas:
 		"h1 h1 h1"
-		". form .";
+		". form ."
+		". smiley .";
+	}
+	#history main {
+		display: grid;
+		grid-template-rows: auto 1fr;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 
+		"h1 h1"
+		"past future";
 	}
 }

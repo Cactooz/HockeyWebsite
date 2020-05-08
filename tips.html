@@ -29,6 +29,7 @@
 				<h1>Tipsa oss</h1>
 				<!--Start av ett formulär, när man skickar in formuläret tar den dig till första sidan och sparar inte dina svar i url:n, formuläret har id tipsform-->
 				<form method="post" action="index.html" role="form">
+					<p>*Mörkblå krävs, ljusblå är valfria</p>
 					<!--En del av fomruläret-->
 					<fieldset>
 						<legend>Namn</legend><!--Namn på formulärdelen-->
@@ -58,6 +59,17 @@
 						<label for="date">Vilket datum hände det? </label>
 						<!--Input för datum, får endast använda siffror och datumet måste vara mellan första januari 1900 och 31 december 2100-->
 						<input type="date" id="date" name="date" title="Format: 2020-01-31" min="1900-01-01" max="2100-12-31" required>
+						<br> <!--Gör en radbrytning så ämne börjar på nästa rad-->
+						<label for="subject">Ämne: </label>
+						<!--En dropdown lista där man kan välja ämne-->
+						<select id="subject" name="subject" required>
+							<option value="" selected disabled hidden>Välj ett alternativ</option> <!--Standard värdet, är valt från början, går inte att välja och är gömd-->
+							<option value="general">Allmämnt</option> <!--Alternativ för dropdown listan med ämnen-->
+							<option value="transfer">Spelarövergångar</option>
+							<option value="rumors">Rykten</option>
+							<option value="highlights">Highlights</option>
+							<option value="other">Övrigt</option>
+						</select>
 					</fieldset>
 					<fieldset>
 						<legend>Ditt tips</legend>
@@ -73,15 +85,12 @@
 					<!--Knapp som skickar in formuläret-->
 					<input type="submit" value="Skicka" class="submitButton">
 				</form>
-				<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg">
-					<circle cx="300" cy="154" r="160" stroke=#FF6600 stroke-width="1" fill="yellow"></circle>
-					<circle cx="210" cy="100" r="20" fill="black"></circle>
-					<circle cx="210" cy="100" r="20" fill="black"></circle>
-					<circle cx="300" cy="100" r="20" fill="black"></circle>
-					<clipPath class="mouthClip">
-						<rect x="30" y="200" width="600" height="100"></rect>
-					</clipPath>
-					<circle cx="300" cy="160" r="120" fill-opacity="0" stroke="black" stroke-width="5" clip-path="url(.mouthClip)"></circle>
+				<!--Inline SVG visare en simley-->
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200px" height="200px">
+					<circle fill="yellow" cx="100" cy="100" r="100"></circle> <!--Bakgrund gul cirkel-->
+					<circle fill="black" cx="60" cy="65" r="20"></circle> <!--Vänstra svarta ögat-->
+					<circle fill="black" cx="140" cy="65" r="20"></circle> <!--Högra svarta ögat-->
+					<path fill="none" stroke="black" stroke-width="10" d="M28.161,100c0,39.676,32.164,71.84,71.839,71.84s71.84-32.164,71.84-71.84"></path> <!--Munnen-->
 				</svg>
 			</main>
 			<footer>
