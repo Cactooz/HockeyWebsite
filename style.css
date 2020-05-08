@@ -170,7 +170,7 @@ h1 {
 }
 #index main section.other div {
 	display: grid;
-	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-rows: auto auto auto;
 	grid-gap: 15px 20px;
 }
 #index main section.nhl img, #index main section.shl img {
@@ -364,7 +364,7 @@ h1 {
 
 #tips address dl {
 	margin: auto;
-	width: 25%;
+	width: 60%;
 	background-color: var(--box-background);
 	box-shadow: var(--box-shadow);
 	border-radius: var(--border-radius);
@@ -488,6 +488,8 @@ footer li a:active {
 	MEDIA QUERIES
 =====================*/
 
+		/*TABLETS
+=====================*/
 @media only screen and (min-width: 700px) {
 	#index main {
 		grid-template-columns: 1fr 1fr;
@@ -496,6 +498,7 @@ footer li a:active {
 		"nhl shl"
 		"other other";
 	}
+
 	nav li a:not(.logo)  {
 		font-size: 1.75rem;
 	}
@@ -504,6 +507,8 @@ footer li a:active {
 	}
 }
 
+		/*PC & TV
+=====================*/
 @media only screen and (min-width: 1200px) {
 	#index main {
 		grid-template-columns: 1fr 17.5rem 1fr;
@@ -519,6 +524,7 @@ footer li a:active {
 		grid-template-rows: 1fr;
 		grid-template-columns: 1fr 1fr 1fr;
 	}
+
 	#league main {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-areas:
@@ -526,26 +532,32 @@ footer li a:active {
 		"standings middle teams"
 		"highlights highlights highlights"
 	}
+
 	#tips main {
 		grid-template-areas:
 		"h1 h1 h1"
 		". form ."
 		". thanks .";
 	}
+	#tips video {
+		width: auto;
+	}
+	#tips address dl {
+		width: 30%;
+	}
+
 	#history main {
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas: 
 		"h1 h1"
 		"past future";
 	}
+
 	#news main {
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas: 
 		"h1 h1"
 		"article article"
 		"article article";
-	}
-	#tips video {
-		width: auto;
 	}
 }
