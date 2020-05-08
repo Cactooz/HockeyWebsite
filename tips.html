@@ -37,7 +37,7 @@
 						<label for="name">Ditt namn: </label> <!--Ett namn för input som heter name-->
 						<!--Input där användaren kan fylla i data, placeholder: från början står det Anders Andersson, pattern: man får bara använda bokstäver och minst två av dem,
 							title förklarar vilket format som behövs, requred: man måste fylla i denna inputen-->
-						<input type="text" id="name" name="name" placeholder="Anders Andersson" pattern="[A-Öa-ö',. ]{2,}" title="Minst två bokstäver, ex. Anders Andersson" required>
+						<input type="text" id="name" name="name" placeholder="Anders Andersson" pattern="[A-Öa-ö',. ]{2,}$" title="Minst två bokstäver, ex. Anders Andersson" required>
 						<p>Vill du att ditt namn ska visas på sidan?</p>
 						<label for="showName">Ja</label>
 						<!--Input radio knapp där man kan välja antingen ja eller nej-->
@@ -53,7 +53,7 @@
 						<br> <!--Gör en radbrytning så Telefonnummer börjar på nästa rad-->
 						<label for="phonenumber">Telefonnummer: </label>
 						<!--Input för telefonnummer, tillåter endast siffror-->
-						<input type="tel" id="phonenumber" name="phonenumber" placeholder="0701-23 45 67" pattern="([(+]*[0-9]+[()+. -]*){5,}" title="Minst 5 siffror, ex. 0701-23 45 67">
+						<input type="tel" id="phonenumber" name="phonenumber" placeholder="0701-23 45 67" pattern="([(+]*[0-9]+[()+. -]*){5,}$" title="Minst 5 siffror, ex. 0701-23 45 67">
 					</fieldset>
 					<fieldset>
 						<legend>Information</legend>
@@ -83,10 +83,37 @@
 						<!--Möjlighet att ladda upp en fil, endast bildfiler är tillåtna, det är inte tvunget att ladda upp en bild-->
 						<input type="file" id="fileupload" name="fileupload" accept="image/*">
 					</fieldset>
+					<fieldset>
+						<legend>Gör ett konto</legend>
+						<label for="username">Användarnamn: </label>
+						<!--Användarnamn som är minst 3 tecken och max 15-->
+						<input type="text" id="username" name="username" placeholder="Välj ett användarnamn" minlength="3" maxlength="15" title="Mellan 3 till 5 tecken">
+						<br>
+						<label for="password">Lösenord:</label>
+						<!--Lösenord som måste ha minst 8 tecken, stora och små bokstäver, siffra och special tecken-->
+						<input type="password" id="password" name="password" placeholder="Välj ett lösenord" minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Minst 8 tecken, en stor bokstav, en liten bokstav, en siffra och ett specialtecken">
+						<br>
+						<label for="remember">Kom ihåg mig: </label>
+						<!--Checkbox där man kan välja om man ska bli ihågkommen, den är i kryssad från början-->
+						<input type="checkbox" id="remember" name="remember" checked="checked">
+					</fieldset>
 					<!--Knapp som skickar in formuläret-->
 					<input type="submit" value="Skicka" class="submitButton">
 				</form>
 				<section>
+					<h2>Tack!</h2>
+					<p>Har du du en fråga tveka inte på att kontakta oss!</p>
+					<address>
+						<dl>
+							<dt>Mail</dt>
+							<dd><a href="mailto:info@hockeyfantaster.se">info@hockeyfantaster.se</a></dd>
+							<dt>Telefon</dt>
+							<dd><a href="tel: +46 12 345 67 89">012 345 67 89</a></dd>
+							<dt>Adress</dt>
+							<dd>Någonstans i Smålands djupa skogar</dd>
+						</dl>
+					</address>
+					<p>Tillbaka till <a href="index.html">första sidan</a>, MER HOCKEY!</p>
 					<!--Inline SVG visare en simley-->
 					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200px" height="200px">
 						<circle fill="yellow" cx="100" cy="100" r="100"></circle> <!--Bakgrund gul cirkel-->
@@ -96,7 +123,7 @@
 					</svg>
 					<!--HTML video med kontroller aktiverade-->
 					<video controls>
-						<source src="video/elmo dance.mp4" type="video/mp4">
+						<source src="video/elmo_dance.mp4" type="video/mp4">
 					</video>
 					<!--Inline SVG visare en simley-->
 					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200px" height="200px">
@@ -106,7 +133,6 @@
 						<path fill="none" stroke="black" stroke-width="10" d="M28.161,100c0,39.676,32.164,71.84,71.839,71.84s71.84-32.164,71.84-71.84"></path> <!--Munnen-->
 					</svg>
 				</section>
-
 			</main>
 			<footer>
 				<div>

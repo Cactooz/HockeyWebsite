@@ -4,33 +4,36 @@
 	--header-footer-background: rgba(20, 20, 20, 0.9); /*Color for header and footer background*/
 	--button-background: rgba(150, 200, 255, 0.5); /*Background color for buttons*/
 	--button-hover-background: rgba(215, 234, 255, 0.6); /*Background color for buttons when the mouse hovers over it*/
-	--button-focus-background: rgba(233, 231, 255, 0.6); /*Background color for buttons when its in focus (clicked)*/
+	--button-focus-background: rgba(177, 206, 238, 0.6); /*Background color for buttons when its in focus (clicked)*/
 	--box-background: rgba(255, 255, 255, 0.85); /*Background color for sections and other boxes*/
 	--border-radius: 6px; /*Border radius for sections and boxes*/
 	--box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.5); /*Shadow for sections and boxes*/
 	--white-font: rgb(240, 240, 240); /*Color for all white text*/
-	--black-font: rgb(12, 12, 12); /*Color for all black text*/
-	--white-hover-font:  rgb(200, 200, 200); /*Color for all white text when the mouse hovers over it*/
-	--black-hover-font: rgb(52, 52, 52); /*Color for all black text when the mouse hovers over it*/
-	--white-focus-font:  rgb(160, 160, 160); /*Color for all white text when its in focus (clicked)*/
-	--black-focus-font: rgb(100, 100, 100); /*Color for all black text when its in focus (clicked)*/
+	--white-hover-font:  rgb(210, 210, 210); /*Color for all white text when the mouse hovers over it*/
+	--white-focus-font:  rgb(180, 180, 180); /*Color for all white text when its in focus (clicked)*/
+	--black-font: rgb(10, 10, 10); /*Color for all black text*/
+	--black-hover-font: rgb(40, 40, 40); /*Color for all black text when the mouse hovers over it*/
+	--black-focus-font: rgb(70, 70, 70); /*Color for all black text when its in focus (clicked)*/
 	--border: 2px solid hsl(235, 77%, 12%); /*Border style for tables*/
 	--table-zebra-background: hsla(240, 3%, 60%, 0.8); /*Zebra stribing for tabel color*/
 }
 
+/*Custom font load*/
+@font-face {
+	font-family: "Tommy"; /*The font family name of the custom font*/
+	src: url(font/MADETOMMYRegular.otf); /*The url to the font*/
+}
+
+/*====================
+		GENERAL
+=====================*/
+
 /*Main body attributes that changes everything on the website*/
 body {
 	background-color: var(--background); /*Changes background color on the whole page*/
-	font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif; /*Font stack with fonts to load in if the first one didn't work it goes to the next one*/
+	font-family: Tommy, 'Open Sans', Verdana, Geneva, Tahoma, sans-serif; /*Font stack with fonts to load in if the first one didn't work it goes to the next one*/
 	color: var(--black-font); /*Text color*/
 	margin: 0; /*Removes margins to the outerparts of the website*/
-
-	/*background-image:
-	linear-gradient(22.5deg, rgba(67, 67, 67, 0.02) 0%, rgba(67, 67, 67, 0.02) 29%,rgba(47, 47, 47, 0.02) 29%, rgba(47, 47, 47, 0.02) 37%,rgba(23, 23, 23, 0.02) 37%, rgba(23, 23, 23, 0.02) 55%,rgba(182, 182, 182, 0.02) 55%, rgba(182, 182, 182, 0.02) 69%,rgba(27, 27, 27, 0.02) 69%, rgba(27, 27, 27, 0.02) 71%,rgba(250, 250, 250, 0.02) 71%, rgba(250, 250, 250, 0.02) 100%),
-	linear-gradient(67.5deg, rgba(117, 117, 117, 0.02) 0%, rgba(117, 117, 117, 0.02) 14%,rgba(199, 199, 199, 0.02) 14%, rgba(199, 199, 199, 0.02) 40%,rgba(33, 33, 33, 0.02) 40%, rgba(33, 33, 33, 0.02) 48%,rgba(135, 135, 135, 0.02) 48%, rgba(135, 135, 135, 0.02) 60%,rgba(148, 148, 148, 0.02) 60%, rgba(148, 148, 148, 0.02) 95%,rgba(53, 53, 53, 0.02) 95%, rgba(53, 53, 53, 0.02) 100%),
-	linear-gradient(135deg, rgba(190, 190, 190, 0.02) 0%, rgba(190, 190, 190, 0.02) 6%,rgba(251, 251, 251, 0.02) 6%, rgba(251, 251, 251, 0.02) 18%,rgba(2, 2, 2, 0.02) 18%, rgba(2, 2, 2, 0.02) 27%,rgba(253, 253, 253, 0.02) 27%, rgba(253, 253, 253, 0.02) 49%,rgba(128, 128, 128, 0.02) 49%, rgba(128, 128, 128, 0.02) 76%,rgba(150, 150, 150, 0.02) 76%, rgba(150, 150, 150, 0.02) 100%),
-	linear-gradient(90deg, var(--background), var(--background));
-	min-height: 100vh;*/
 }
 /*Grid container for the website*/
 .gridContainer {
@@ -41,6 +44,26 @@ body {
 	"main"
 	"footer";
 	grid-gap: 15px 20px; /*The gap between the different grid areas*/
+}
+
+/*====================
+	LoVe Focus HAte
+=====================*/
+
+a:link {
+	color: blue;
+}
+a:visited {
+	color: red;
+}
+a:focus {
+	color: green;
+}
+a:hover {
+	color: yellow;
+}
+a:active {
+	color: orange;
 }
 
 /*====================
@@ -80,14 +103,18 @@ nav li a:not(.logo)  {
 	align-items: center; /*Align the items on the vertical axis*/
 	justify-content: center; /*Align the content on horizontal axis*/
 }
+/*Attributes for the a tags in the list items in the nav bar when its in focus using the keyboard*/
+nav li a:focus:not(.logo) {
+	color: var(--white-focus-font);
+	text-decoration: underline;
+	background-color: var(--button-focus-background); /*Background color of the a tag when the mouse hovers it*/
+}
 /*Attributes for the a tags in the list items in the nav bar when the mouse hovers over*/
-nav li a:hover:not(.logo) {
-	background-color: var(--button-hover-background-background); /*Background color of the a tag when the mouse hovers it*/
+nav li a:hover:not(.logo):not(.active) {
+	background-color: var(--button-hover-background); /*Background color of the a tag when the mouse hovers it*/
 	transition: background-color 0.5s; /*Fades in the background color of the buttons over 0.5 seconds in a linear motion*/
 }
-nav li a:focus:not(.logo) {
-	background-color: var(--button-focus-background-background); /*Background color of the a tag when the mouse hovers it*/
-}
+/*Attributes for the a tag that is active, it has the class active if its the current page*/
 nav li a.active {
 	background-color: var(--button-background); /*Background color of the a tag when the mouse hovers it*/
 }
@@ -179,7 +206,7 @@ h1 {
 	border-radius: var(--border-radius);
 	box-shadow: var(--box-shadow);
 }
-#league main section.middle .newsButton:hover {
+#league main section.middle .newsButton:focus, #league main section.middle .newsButton:hover {
 	color: var(--black-font);
 	background-color: var(--button-hover-background);
 }
@@ -208,7 +235,7 @@ h1 {
 	align-items: center; /*Align the items on the vertical axis*/
 }
 /*Attributes for the a tags in the list items in the nav bar when the mouse hovers over*/
-#league main section.teams li a:hover {
+#league main section.teams li a:focus, #league main section.teams li a:hover {
 	background-color: var(--button-background); /*Background color of the a tag when the mouse hovers it*/
 	border-radius: var(--border-radius);
 	transition: background-color 0.5s; /*Fades in the background color of the buttons over 0.5 seconds in a linear motion*/
@@ -262,6 +289,11 @@ h1 {
 	"form"
 	"thanks";
 }
+#tips main section {
+	grid-area: thanks;
+	margin: auto;
+	text-align: center;
+}
 #tips form {
 	grid-area: form;
 	text-align: center;
@@ -288,17 +320,6 @@ h1 {
 	width: 95%;
 	height: 15rem;
 	margin-top: 10px;
-}
-#tips main section {
-	grid-area: thanks;
-	margin: auto;
-}
-#tips svg {
-	margin: auto;
-	padding: 25px;
-}
-#tips video {
-	width: 80%;
 }
 #tips form :optional:not(.submitButton) {
 	background: linear-gradient(90deg,rgba(255,255,255,1) 20%, rgba(202,246,255,1) 100%);
@@ -327,6 +348,28 @@ h1 {
 	background-color: rgb(30, 71, 32);
 }
 
+#tips svg {
+	margin: auto;
+	padding: 8ex;
+	transform: rotate(20deg);
+}
+#tips video {
+	width: 80%;
+	border: var(--border);
+	border-radius: var(--border-radius);
+}
+#tips address {
+	text-align: left;
+}
+
+#tips address dl {
+	margin: auto;
+	width: 25%;
+	background-color: var(--box-background);
+	box-shadow: var(--box-shadow);
+	border-radius: var(--border-radius);
+	padding: 1.5em;
+}
 /*====================
 		HISTORIA
 =====================*/
@@ -386,12 +429,12 @@ h1 {
 }
 
 #news main article img {
-	width:75%;
+	width: 75%;
 	border: var(--border);
 	border-radius: var(--border-radius)
 }
 
-#news main article ol {
+#news main article ul {
 	list-style-type: none;
 }
 
@@ -422,13 +465,23 @@ footer li a {
 	text-decoration: none; /*Removes text underline*/
 	font-size: 1rem; /*Size of the text*/
 }
+footer li a:link {
+	color: var(--white-font); /*Text color*/
+	text-decoration: underline;
+}
+footer li a:visited {
+	color: lightblue; /*Text color*/
+}
+footer li a:focus {
+	color: var(--white-focus-font); /*Text color*/
+	background-color: var(--button-focus-background);
+}
 /*Attributes for the a tags in the list items when the mouse hovers over*/
 footer li a:hover {
 	color: var(--white-hover-font); /*Text color*/
 }
-/*Attributes for the a tags in the list items when the mouse hovers over*/
-footer li a:focus {
-	color: var(--white-focus-font); /*Text color*/
+footer li a:active {
+	color: cyan; /*Text color*/
 }
 
 /*====================
