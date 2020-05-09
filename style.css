@@ -371,7 +371,7 @@ h1 {
 	padding: 1.5em;
 }
 /*====================
-		HISTORIA
+		HISTORY
 =====================*/
 
 #history main {
@@ -402,8 +402,15 @@ h1 {
 	font-weight: bold;
 }
 
+#history main p + img {
+	width: 80%;
+	border: var(--border);
+	border-radius: var(--border-radius);
+	margin: 10px;
+}
+
 /*====================
-		NYHETER
+		NEWS
 =====================*/
 #news main {
 	display: grid;
