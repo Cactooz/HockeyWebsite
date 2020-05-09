@@ -1,3 +1,7 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+			GENERAL STYLING
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
 /*CSS variables for colors and more*/
 :root {
 	--background: rgb(219, 229, 235); /*Main background color*/
@@ -14,7 +18,7 @@
 	--black-font: rgb(10, 10, 10); /*Color for all black text*/
 	--black-hover-font: rgb(40, 40, 40); /*Color for all black text when the mouse hovers over it*/
 	--black-focus-font: rgb(70, 70, 70); /*Color for all black text when its in focus (clicked)*/
-	--border: 2px solid hsl(235, 77%, 12%); /*Border style for tables*/
+	--border: 2px solid hsl(235, 77%, 12%); /*Border style*/
 	--table-zebra-background: hsla(240, 3%, 60%, 0.8); /*Zebra stribing for tabel color*/
 }
 
@@ -25,7 +29,7 @@
 }
 
 /*====================
-		GENERAL
+	BODY & GRID
 =====================*/
 
 /*Main body attributes that changes everything on the website*/
@@ -50,18 +54,23 @@ body {
 	LoVe Focus HAte
 =====================*/
 
+/*A normal link leading to a page you have not visited*/
 a:link {
 	color: blue;
 }
+/*A link leading to a page you have visited*/
 a:visited {
 	color: red;
 }
+/*The link when its in focus using the keyboard*/
 a:focus {
 	color: green;
 }
+/*The link when the mouse hovers over it*/
 a:hover {
 	color: yellow;
 }
+/*The link when its active and clicked*/
 a:active {
 	color: orange;
 }
@@ -69,7 +78,7 @@ a:active {
 /*====================
 		HEADER
 =====================*/
-/*Header*/
+
 header {
 	grid-area: header; /*Defines the grid area "header"*/
 	background-color: var(--header-footer-background); /*Background color of the header*/
@@ -105,8 +114,8 @@ nav li a:not(.logo)  {
 }
 /*Attributes for the a tags in the list items in the nav bar when its in focus using the keyboard*/
 nav li a:focus:not(.logo) {
-	color: var(--white-focus-font);
-	text-decoration: underline;
+	color: var(--white-focus-font); /*Change text color*/
+	text-decoration: underline; /*Add a underline to the link*/
 	background-color: var(--button-focus-background); /*Background color of the a tag when the mouse hovers it*/
 }
 /*Attributes for the a tags in the list items in the nav bar when the mouse hovers over*/
@@ -130,21 +139,102 @@ nav li img {
 =====================*/
 main {
 	padding: 0px 15px; /*Padding around main so the content isn't exactly at the edge, 15px left and right while 0px up and down*/
-	grid-gap: 15px 20px;
+	grid-gap: 15px 20px;  /*Gap between the grid boxes*/
 }
 h1 {
-	grid-area: h1;
-	text-align: center;
-	font-size: 2.5rem;
+	grid-area: h1; /*The name of the grid area*/
+	text-align: center; /*Center the text*/
+	font-size: 2.5rem; /*Change text size*/
 	text-transform: uppercase; /*Makes the text uppercase letters*/
 }
-#index main section.nhl, #index main section.shl, #index main section.other, #league main section.teams, #league main section.middle, #league main section.standings, #league main section.highlights, #history main section, #news main article {
-	text-align: center;
-	padding: 25px;
-	background-color: var(--box-background);
-	border-radius: var(--border-radius);
-	box-shadow: var(--box-shadow);
+
+/*Same design for all sections and article boxes on all pages*/
+#index main section.nhl, #index main section.shl, #index main section.other, #league main section.teams, #league main section.middle, #league main section.standings, #league main section.highlights, #history main section, #news main article, #charts main section {
+	text-align: center; /*Align the text in the middle*/
+	padding: 25px; /*Add padding around object (inside of the border)*/
+	background-color: var(--box-background); /*Background color of the object*/
+	border-radius: var(--border-radius); /*Rounds the corners of the object*/
+	box-shadow: var(--box-shadow); /*Adds a shadow behind the object so it feels closer to the user*/
 }
+
+/*====================
+		TABLES
+=====================*/
+
+/*The main table*/
+table {
+	width: 65%; /*Change the width of the table*/
+	margin: auto; /*Use auto margin to center the tabel in the middle*/
+}
+/*The tabel and all rows should have a border*/
+table, tr {
+	border: var(--border);
+	border-collapse: collapse; /*Collapse the borders into one shared border*/
+}
+/*The headers and normal cells should have padding*/
+td, th {
+	padding: 5px;
+}
+/*Zebra striping, all even tabel rown gets another background color*/
+tr:nth-child(even) {
+	background-color: var(--table-zebra-background);
+	color: var(--white-font);
+}
+
+/*====================
+		FOOTER
+=====================*/
+/*Footer*/
+footer {
+	grid-area: footer; /*Defines the grid area "footer"*/
+	color: var(--white-font); /*Text color*/
+	background-color: var(--header-footer-background); /*Background color for the footer*/
+	display: grid; /*Defines to use grid*/
+	grid-template-columns: 1fr 1fr; /*Splits the grid into 2 columns*/
+	padding: 15px; /*Padding around the fotter so the content doesn't start at the edge*/
+	text-align: center; /*Aligns the text in the center*/
+}
+/*Footer unorered list*/
+footer ul {
+	list-style-type: none; /*Removes text circle ahead of each list item in the list*/
+	margin: 0px; /*Removes margins*/
+	padding: 0px; /*Removes padding*/
+}
+/*Footer a tags in the list items */
+footer li a {
+	color: var(--white-font); /*<Text color*/
+	text-align: center; /*Aligns the text in the center*/
+	font-weight: bold; /*Makes the text bold*/
+	text-decoration: none; /*Removes text underline*/
+	font-size: 1rem; /*Size of the text*/
+}
+
+/*A normal unvisited link in the footer list item*/
+footer li a:link {
+	color: var(--white-font); /*Text color*/
+	text-decoration: underline; /*Add a underline on the links*/
+}
+/*A visited link in the footer list item*/
+footer li a:visited {
+	color: lightblue; /*Text color*/
+}
+/*A link in focus using the keyboard, in the footer list item*/
+footer li a:focus {
+	color: var(--white-focus-font); /*Text color*/
+	background-color: var(--button-focus-background); /*Change the background color*/
+}
+/*Attributes for the a tags in the list items when the mouse hovers over*/
+footer li a:hover {
+	color: var(--white-hover-font); /*Text color*/
+}
+/*A active link, when its clicked, in the footer list item*/
+footer li a:active {
+	color: cyan; /*Text color*/
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+		PAGE SPECIFIC STYLING
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
 /*====================
 		INDEX MAIN
@@ -153,7 +243,7 @@ h1 {
 #index main {
 	display: grid;
 	grid-area: main; /*Defines the grid area "main"*/
-	grid-template-areas:
+	grid-template-areas: /*The areas where the different grid boxes/areas should be placed*/
 	"h1"
 	"nhl"
 	"shl"
@@ -170,11 +260,11 @@ h1 {
 }
 #index main section.other div {
 	display: grid;
-	grid-template-rows: auto auto auto;
-	grid-gap: 15px 20px;
+	grid-template-rows: auto auto auto; /*How the rows of the grid should be splitted*/
+	grid-gap: 15px 20px; /*Gap between the different grid boxes/areas*/
 }
 #index main section.nhl img, #index main section.shl img {
-	width: 80%;
+	width: 80%; /*The images is 80% of the maximum width*/
 }
 
 /*====================
@@ -216,9 +306,9 @@ h1 {
 }
 #league main section.teams ul {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-evenly; /*Space the items in the section evenly*/
 	flex-direction: row; /*Defines if the flexboxes should be in a row(-/horizontal) or in a column (|/verticaly)*/
-	flex-wrap: wrap;
+	flex-wrap: wrap; /*Put the items on another row if it overflows its available space*/
 	padding: 0px; /*Removes the padding from the list*/
 	margin: 0px; /*Removes the margin from the list*/
 	list-style-type: none; /*Removes the dots before each item in the unordered list */
@@ -241,34 +331,18 @@ h1 {
 	transition: background-color 0.5s; /*Fades in the background color of the buttons over 0.5 seconds in a linear motion*/
 }
 #league main section.teams li img {
-	padding: 0px 15px;
-	height: 35px;
+	padding: 0px 15px; /*0 padding up down and 15px right left*/
+	height: 35px; /*The height of the image*/
 }
 #league main section.standings {
 	grid-area: standings;
-}
-#league main section.standings table {
-	width: 65%;
-	margin-left: auto;
-	margin-right: auto;
-}
-#league main section.standings table, #league main section.standings tr {
-	border: var(--border);
-	border-collapse: collapse;
-}
-#league main section.standings td, #league main section.standings th {
-	padding: 5px;
-}
-#league main section.standings tr:nth-child(even) {
-	background-color: var(--table-zebra-background);
-	color: var(--white-font);
 }
 #league main section.highlights {
 	grid-area: highlights;
 }
 #league main section.highlightVideos {
 	display: flex;
-	flex-direction: row;
+	flex-direction: row; /*Display the flex box content in a row (horizontal -)*/
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
@@ -280,7 +354,7 @@ h1 {
 }
 
 /*====================
-		TIPS
+		TIPS MAIN
 =====================*/
 #tips main {
 	display: grid;
@@ -349,10 +423,30 @@ h1 {
 }
 
 #tips svg {
-	margin: auto;
-	padding: 8ex;
-	transform: rotate(20deg);
+	margin: auto; /*Use auto margin to center the svg in the middle*/
+	padding: 8ex; /*Add padding around the svg*/
+	/*Animate the smiley with the smileyMovement animation for 7.5 seconds, infinite amount of times*/
+	animation: smileyMovement 7.5s infinite;
 }
+
+/*Animation or the movement of the smiley svg*/
+@keyframes smileyMovement {
+	/*Start and end of the animation*/
+	0%, 100% {
+		vertical-align: 0vh; /*Start of with 0 vertical alignment*/
+		transform: rotate(0deg); /*Start with 0 rotation*/
+	}
+	/*Half way through the animation*/
+	50% {
+		vertical-align: 5vh; /*Move the vertical alignment to 5vh*/
+		transform: rotate(360deg); /*Rotate the smiley 360 degrees to the right*/
+	}
+}
+
+#tips main address ~ p a::after {
+	content: ", MER HOCKEY!";
+}
+
 #tips video {
 	width: 80%;
 	border: var(--border);
@@ -371,9 +465,10 @@ h1 {
 	padding: 1.5em;
 }
 /*====================
-		HISTORY
+	HISTORY MAIN
 =====================*/
 
+/*How the grid areas should be placed*/
 #history main {
 	display: grid;
 	grid-template-areas: 
@@ -382,36 +477,37 @@ h1 {
 	"future";
 }
 
+/*Give the sections their grid area name*/
 #history main .past {
 	grid-area: past;
 }
-
 #history main .future {
 	grid-area: future;
 }
 
-#history main section {
-	text-align: center;
-}
-
+/*Make the first letter in the p tags in main get a bigger font size*/
 #history main p::first-letter {
 	font-size: 2.5ex;
 }
 
+/*Make the first row in the p tags in main be bold*/
 #history main p::first-line {
 	font-weight: bold;
 }
 
+/*Style the image that are adjacent sibling to a p tag*/
 #history main p + img {
-	width: 80%;
+	width: 80%; /*Change image width*/
+	/*Add normal border and radius*/
 	border: var(--border);
 	border-radius: var(--border-radius);
-	margin: 10px;
+	margin: 10px; /*Add margin (outside of the border)*/
 }
 
 /*====================
-		NEWS
+		NEWS MAIN
 =====================*/
+/*How the grid areas should be placed*/
 #news main {
 	display: grid;
 	grid-template-areas: 
@@ -422,82 +518,93 @@ h1 {
 	"article4";
 }
 
-#news main article:nth-child(2) {
+/*Give the sections their grid area name*/
+#news main article:nth-child(2) { /*Get the second child of the section, the <h1> is the first child*/
 	grid-area: "article1";
 }
-#news main article:nth-child(3) {
+#news main article:nth-child(3) { /*Get the thrid child of the section*/
 	grid-area: "article2";
 }
-#news main article:nth-child(4) {
+#news main article:nth-child(4) { /*Get the forth child of the section*/
 	grid-area: "article3";
 }
 #news main article:nth-child(5) {
 	grid-area: "article4";
 }
 
+/*Change the width of the image and add the normal border*/
 #news main article img {
 	width: 75%;
 	border: var(--border);
 	border-radius: var(--border-radius)
 }
-
 #news main article ul {
-	list-style-type: none;
+	list-style-type: none; /*Remove the dots before each list item in the list*/
 }
 
 /*====================
-		FOOTER
+		CHARTS MAIN
 =====================*/
-/*Footer*/
-footer {
-	grid-area: footer; /*Defines the grid area "footer"*/
-	color: var(--white-font); /*Text color*/
-	background-color: var(--header-footer-background); /*Background color for the footer*/
-	display: grid; /*Defines to use grid*/
-	grid-template-columns: 1fr 1fr; /*Splits the grid into 2 columns*/
-	padding: 15px; /*Padding around the fotter so the content doesn't start at the edge*/
-	text-align: center; /*Aligns the text in the center*/
+
+/*How the grid areas should be placed*/
+#charts main {
+	display: grid;
+	grid-template-areas: 
+	"h1"
+	"goals"
+	"pass"
+	"penalties"
+	"plusminus"
+	"powerplay"
+	"boxplay";
 }
-/*Footer unorered list*/
-footer ul {
-	list-style-type: none; /*Removes text circle ahead of each list item in the list*/
-	margin: 0px; /*Removes margins*/
-	padding: 0px; /*Removes padding*/
+
+/*Give the sections their grid area name*/
+#news main section:nth-child(2) { /*Get the second child of the section, the <h1> is the first child*/
+	grid-area: "goals";
 }
-/*Footer a tags in the list items */
-footer li a {
-	color: var(--white-font); /*<Text color*/
-	text-align: center; /*Aligns the text in the center*/
-	font-weight: bold; /*Makes the text bold*/
-	text-decoration: none; /*Removes text underline*/
-	font-size: 1rem; /*Size of the text*/
+#news main section:nth-child(3) { /*Get the thrid child of the section*/
+	grid-area: "pass";
 }
-footer li a:link {
-	color: var(--white-font); /*Text color*/
-	text-decoration: underline;
+#news main section:nth-child(4) { /*Get the forth child of the section*/
+	grid-area: "penalties";
 }
-footer li a:visited {
-	color: lightblue; /*Text color*/
+#news main section:nth-child(5) {
+	grid-area: "plusminus";
 }
-footer li a:focus {
-	color: var(--white-focus-font); /*Text color*/
-	background-color: var(--button-focus-background);
+#news main section:nth-child(6) {
+	grid-area: "powerplay";
 }
-/*Attributes for the a tags in the list items when the mouse hovers over*/
-footer li a:hover {
-	color: var(--white-hover-font); /*Text color*/
+#news main section:nth-child(7) {
+	grid-area: "boxplay";
 }
-footer li a:active {
-	color: cyan; /*Text color*/
-}
+
 
 /*====================
 	MEDIA QUERIES
 =====================*/
 
-		/*TABLETS
-=====================*/
+	/*TABLETS
+=================*/
+
+/*Changes how some things should be showed if the
+screen is wider than 700 pixels*/
 @media only screen and (min-width: 700px) {
+
+	/*GENERAL
+	===========*/
+	/*Make the nav text size bigger*/
+	nav li a:not(.logo)  {
+		font-size: 1.75rem;
+	}
+	/*Make the nav image taller*/
+	nav li img {
+		height: 6rem; /*The height of the image*/
+	}
+	
+	/*INDEX
+	===========*/
+	/*Change how the grid areas should be placed*/
 	#index main {
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas:
@@ -505,33 +612,53 @@ footer li a:active {
 		"nhl shl"
 		"other other";
 	}
-
-	nav li a:not(.logo)  {
-		font-size: 1.75rem;
-	}
-	nav li img {
-		height: 6rem; /*The height of the image*/
+	
+	/*CHARTS
+	===========*/
+	/*Change how the grid areas should be placed*/
+	#charts main {
+		grid-template-areas: 
+		"h1 h1"
+		"goals pass"
+		"penalties plusminus"
+		"powerplay boxplay";
 	}
 }
 
-		/*PC & TV
-=====================*/
+	/*PC & TV
+=================*/
+
+/*Changes how some things should be showed if the
+screen is wider than 1200 pixels*/
 @media only screen and (min-width: 1200px) {
+
+	/*INDEX
+	===========*/
+
+	/*Change how the grid areas should be placed
+	and add a background image*/
 	#index main {
 		grid-template-columns: 1fr 17.5rem 1fr;
 		grid-template-areas:
 		"nhl h1 shl"
 		"other other other";
-		background-image: url(images/atlantic.png);
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
+		background-image: url(images/atlantic.png); /*background image*/
+		background-repeat: no-repeat; /*The background image should not repeat*/
+		background-position: center; /*Place the background image in the center of the area*/
+		background-size: cover; /*Make the background image cover the whole area*/
 	}
+	/*Change how the rows and columns of the grid
+	should be split, and how many there should be*/
 	#index main section.other div {
 		grid-template-rows: 1fr;
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 
+	
+	/*LEAGUE
+	===========*/
+	/*Change how the grid areas should be placed
+	and how the columns should be splitted*/
 	#league main {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-areas:
@@ -540,19 +667,30 @@ footer li a:active {
 		"highlights highlights highlights"
 	}
 
+	
+	/*TIPS
+	===========*/
+	/*Change how the grid areas should be placed*/
 	#tips main {
 		grid-template-areas:
 		"h1 h1 h1"
 		". form ."
 		". thanks .";
 	}
+	/*Change the width of the video*/
 	#tips video {
-		width: auto;
+		width: 39%;
 	}
-	#tips address dl {
+	/*Change the width of all adress dl*/
+	#tips address > dl {
 		width: 30%;
 	}
 
+	
+	/*HISTORY
+	===========*/
+	/*Change how the grid areas should be placed
+	and how the columns should be splitted*/
 	#history main {
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas: 
@@ -560,11 +698,25 @@ footer li a:active {
 		"past future";
 	}
 
+	/*NEWS
+	===========*/
+	/*Change how the grid areas should be placed
+	and how the columns should be splitted*/
 	#news main {
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas: 
 		"h1 h1"
 		"article article"
 		"article article";
+	}
+	
+	/*CHARTS
+	===========*/
+	/*Change how the grid areas should be placed*/
+	#charts main {
+		grid-template-areas: 
+		"h1 h1 h1"
+		"goals pass penalties"
+		"plusminus powerplay boxplay";
 	}
 }
