@@ -186,6 +186,10 @@ tr:nth-child(even) {
 	background-color: var(--table-zebra-background);
 	color: var(--white-font);
 }
+/*The table cells in the table footer*/
+tfoot td {
+	vertical-align: bottom; /*Align the text to the bottom*/
+}
 
 /*====================
 		FOOTER
