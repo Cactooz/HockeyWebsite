@@ -11,7 +11,7 @@
 	<body id="charts">
 		<div class="gridContainer">
 			<header role="banner" aria-label="header banner">
-				<nav role="navigation" aria-label="main navigation">
+				<nav role="navigation" aria-label="global navigation">
 					<ul>
 						<li>
 							<a href="../nhl.html">NHL</a>
@@ -39,10 +39,135 @@
 				</nav>
 			</header>
 			<main role="main">
+				<!--Huvudrubrik-->
 				<h1>Topplistor</h1>
 				<section>
-					<h2>Mål</h2>
+					<!--Tabell för flest gjorda mål-->
 					<table>
+						<!--Tabellens namn/rubrik-->
+						<caption>Mål</caption>
+						<!--Tabellhuvud med column rubriker-->
+						<thead>
+							<tr> <!--En rad i tabellhubudet-->
+								<th scope="col">Plats</th> <!--Ett tabell huvud element, scope att headern är för en column och inte en rad-->
+								<th scope="col">Lag</th>
+								<th scope="col">GP</th>
+								<th scope="col">+/-</th>
+								<th scope="col">P</th>
+							</tr>
+						</thead>
+						<!--Tabell body med information-->
+						<tbody>
+							<tr> <!--En rad i tabell bodyn-->
+								<td>1</td> <!--Ett tabell element i den första kolumnen-->
+								<td>Luleå</td> <!--Ett tabell element i den andra kolumnen-->
+								<td>52</td> <!--Ett tabell element i den tredje kolumnen-->
+								<td>53</td>
+								<td>106</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Färjestad</td>
+								<td>52</td>
+								<td>27</td>
+								<td>92</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Rögle</td>
+								<td>52</td>
+								<td>26</td>
+								<td>92</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Skellefteå</td>
+								<td>52</td>
+								<td>27</td>
+								<td>90</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>HV71</td>
+								<td>52</td>
+								<td>28</td>
+								<td>89</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>Djurgården</td>
+								<td>52</td>
+								<td>2</td>
+								<td>88</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>Frölunda</td>
+								<td>52</td>
+								<td>28</td>
+								<td>85</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>Örebro</td>
+								<td>52</td>
+								<td>4</td>
+								<td>85</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>Malmö</td>
+								<td>52</td>
+								<td>1</td>
+								<td>77</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>Växjö</td>
+								<td>52</td>
+								<td>-16</td>
+								<td>70</td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>Linköping</td>
+								<td>52</td>
+								<td>-21</td>
+								<td>65</td>
+							</tr>
+							<tr>
+								<td>12</td>
+								<td>Brynäs</td>
+								<td>52</td>
+								<td>-36</td>
+								<td>60</td>
+							</tr>
+							<tr>
+								<td>13</td>
+								<td>Leksand</td>
+								<td>52</td>
+								<td>-53</td>
+								<td>49</td>
+							</tr>
+							<tr>
+								<td>14</td>
+								<td>Oskarshamn</td>
+								<td>52</td>
+								<td>-70</td>
+								<td>44</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="5">*Gäller för säsongen 2019/2020</td>
+							</tr>
+						</tfoot>					
+					</table>
+				</section>
+				<section>
+					<!--Tabell för flest assist-->
+					<table>
+						<caption>Assist</caption>
 						<thead>
 							<tr>
 								<th scope="col">Plats</th>
@@ -160,8 +285,9 @@
 					</table>
 				</section>
 				<section>
-					<h2>Assist</h2>
+					<!--Tabell för flest utvisningar-->
 					<table>
+						<caption>Utvisningar</caption>
 						<thead>
 							<tr>
 								<th scope="col">Plats</th>
@@ -279,8 +405,9 @@
 					</table>
 				</section>
 				<section>
-					<h2>Utvisningar</h2>
+					<!--Tabell för bäst plus/minus-->
 					<table>
+						<caption>Plus/Minus</caption>
 						<thead>
 							<tr>
 								<th scope="col">Plats</th>
@@ -398,8 +525,9 @@
 					</table>
 				</section>
 				<section>
-					<h2>Plus/Minus</h2>
+					<!--Tabell för bäst powerplay-->
 					<table>
+						<caption>Powerplay</caption>
 						<thead>
 							<tr>
 								<th scope="col">Plats</th>
@@ -517,127 +645,9 @@
 					</table>
 				</section>
 				<section>
-					<h2>Powerplay</h2>
+					<!--Tabell för bäst boxplay-->
 					<table>
-						<thead>
-							<tr>
-								<th scope="col">Plats</th>
-								<th scope="col">Spelare</th>
-								<th scope="col">GP</th>
-								<th scope="col">+/-</th>
-								<th scope="col">P</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-								<td>Luleå</td>
-								<td>52</td>
-								<td>53</td>
-								<td>106</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Färjestad</td>
-								<td>52</td>
-								<td>27</td>
-								<td>92</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>Rögle</td>
-								<td>52</td>
-								<td>26</td>
-								<td>92</td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td>Skellefteå</td>
-								<td>52</td>
-								<td>27</td>
-								<td>90</td>
-							</tr>
-							<tr>
-								<td>5</td>
-								<td>HV71</td>
-								<td>52</td>
-								<td>28</td>
-								<td>89</td>
-							</tr>
-							<tr>
-								<td>6</td>
-								<td>Djurgården</td>
-								<td>52</td>
-								<td>2</td>
-								<td>88</td>
-							</tr>
-							<tr>
-								<td>7</td>
-								<td>Frölunda</td>
-								<td>52</td>
-								<td>28</td>
-								<td>85</td>
-							</tr>
-							<tr>
-								<td>8</td>
-								<td>Örebro</td>
-								<td>52</td>
-								<td>4</td>
-								<td>85</td>
-							</tr>
-							<tr>
-								<td>9</td>
-								<td>Malmö</td>
-								<td>52</td>
-								<td>1</td>
-								<td>77</td>
-							</tr>
-							<tr>
-								<td>10</td>
-								<td>Växjö</td>
-								<td>52</td>
-								<td>-16</td>
-								<td>70</td>
-							</tr>
-							<tr>
-								<td>11</td>
-								<td>Linköping</td>
-								<td>52</td>
-								<td>-21</td>
-								<td>65</td>
-							</tr>
-							<tr>
-								<td>12</td>
-								<td>Brynäs</td>
-								<td>52</td>
-								<td>-36</td>
-								<td>60</td>
-							</tr>
-							<tr>
-								<td>13</td>
-								<td>Leksand</td>
-								<td>52</td>
-								<td>-53</td>
-								<td>49</td>
-							</tr>
-							<tr>
-								<td>14</td>
-								<td>Oskarshamn</td>
-								<td>52</td>
-								<td>-70</td>
-								<td>44</td>
-							</tr>
-						</tbody>
-						<tfoot>
-							<tr>
-								<td colspan="5">*Gäller för säsongen 2019/2020</td>
-							</tr>
-						</tfoot>					
-					</table>
-				</section>
-				<section>
-					<h2>Boxplay</h2>
-					<table>
+						<caption>Boxplay</caption>
 						<thead>
 							<tr>
 								<th scope="col">Plats</th>

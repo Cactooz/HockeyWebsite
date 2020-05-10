@@ -11,7 +11,7 @@
 	<body id="league">
 		<div class="gridContainer">
 			<header role="banner" aria-label="header banner">
-				<nav role="navigation" aria-label="main navigation">
+				<nav role="navigation" aria-label="global navigation">
 					<ul>
 						<li>
 							<a href="nhl.html">NHL</a>
@@ -24,6 +24,7 @@
 						</li>
 					</ul>
 				</nav>
+				<!--Lokal navigation, aria landmarks navigation och namn lokal navigation-->
 				<nav role="navigation" aria-label="lokal navigation">
 					<ul>
 						<li>
@@ -40,24 +41,28 @@
 			</header>
 			<main role="main">
 				<h1>SHL</h1>
+				<!--Sektion med tabell-->
 				<section class="standings">
-					<h2>Aktuell tabell</h2>
+					<!--Tabell-->
 					<table>
+						<!--Tabell rubrik-->
 						<caption>SHL tabell 2019/2020</caption>
+						<!--Tabellhuvud med column rubriker-->
 						<thead>
-							<tr>
-								<th scope="col">Plats</th>
+							<tr> <!--En rad i tabellhubudet-->
+								<th scope="col">Plats</th> <!--Ett tabell huvud element, scope att headern är för en column och inte en rad-->
 								<th scope="col">Lag</th>
 								<th scope="col">GP</th>
 								<th scope="col">+/-</th>
 								<th scope="col">P</th>
 							</tr>
 						</thead>
+						<!--Tabell body med information-->
 						<tbody>
-							<tr>
-								<td>1</td>
-								<td>Luleå</td>
-								<td>52</td>
+							<tr> <!--En rad i tabell bodyn-->
+								<td>1</td> <!--Ett tabell element i den första kolumnen-->
+								<td>Luleå</td> <!--Ett tabell element i den andra kolumnen-->
+								<td>52</td> <!--Ett tabell element i den tredje kolumnen-->
 								<td>53</td>
 								<td>106</td>
 							</tr>
@@ -160,62 +165,43 @@
 						</tfoot>				
 					</table>
 				</section>
+				<!--Sektion för mitten med senaste nyheten-->
 				<section class="middle">
+					<!--Huvudrubrik i sektionen-->
 					<h2>Senaste nyheten</h2>
-					<img src="images/news/tekning-shl.jpg" alt="Senaste nyheten bild" class="newsImage">
+					<img src="images/news/tekning-shl.jpg" alt="Tekning mellan två spelare">
+					<!--Underrukrik i sektionen-->
 					<h3>Ändringar i spelschemat till SHL 2020/2021</h3>
 					<a href="shl/nyheter.html" class="newsButton">Läs mer nyheter</a>
 				</section>
+				<!--Sektion för lag-->
 				<section class="teams">
 					<h2>Lag 2019/2020</h2>
+					<!--En osorterad lista med alla lag-->
 					<ul>
-						<li>
-							<a href="https://www.brynas.se/"><img src="images/shl/brynas.png" alt="Brynäs logga">Brynäs IF</a>
-						</li>
-						<li>
-							<a href="https://www.difhockey.se/"><img src="images/shl/djurgarden.png" alt="Djurgården logga">Djurgården Hockey</a>
-						</li>
-						<li>
-							<a href="https://www.frolundaindians.com/"><img src="images/shl/frolunda.png" alt="Frölunda logga">Frölunda Indians</a>
-						</li>
-						<li>
-							<a href="https://www.farjestadbk.se/"><img src="images/shl/farjestad.png" alt="Färjestad logga">Färjestad BK</a>
-						</li>
-						<li>
-							<a href="https://www.hv71.se/"><img src="images/shl/hv71.png" alt="HV71 logga">HV71</a>
-						</li>
-						<li>
-							<a href="http://www.ikoskarshamn.se/"><img src="images/shl/oskarshamn.png" alt="Oskarshamn logga">IK Oskarshamn</a>
-						</li>
-						<li>
-							<a href="https://www.lhc.eu/"><img src="images/shl/linkoping.png" alt="Linköping logga">Linköping HC</a>
-						</li>
-						<li>
-							<a href="http://www.leksandsif.se/"><img src="images/shl/leksand.png" alt="Leksand logga">Leksands IF</a>
-						</li>
-						<li>
-							<a href="https://www.luleahockey.se/"><img src="images/shl/lulea.png" alt="Luleå logga">Luleå Hockey</a>
-						</li>
-						<li>
-							<a href="https://www.malmoredhawks.com/"><img src="images/shl/malmo.png" alt="Malmö logga">Malmö Redhawks</a>
-						</li>
-						<li>
-							<a href="https://www.roglebk.se/"><img src="images/shl/rogle.png" alt="Rögle logga">Rögle BK</a>
-						</li>
-						<li>
-							<a href="https://www.skellefteaaik.se/"><img src="images/shl/skelleftea.png" alt="Skellefteå logga">Skellefteå AIK</a>
-						</li>
-						<li>
-							<a href="https://www.vaxjolakers.se/"><img src="images/shl/vaxjo.png" alt="Växjö logga">Växjö Lakers</a>
-						</li>
-						<li>
-							<a href="https://www.orebrohockey.se/"><img src="images/shl/orebro.png" alt="Örebro logga">Örebro Hockey</a>
-						</li>
+						<!--Listitem som innehåller en bild och lagets namn, både bilden och texten ligger i en länk som leder till lagets hemsida-->
+						<li><a href="https://www.brynas.se/"><img src="images/shl/brynas.png" alt="Brynäs logga">Brynäs IF</a></li>
+						<li><a href="https://www.difhockey.se/"><img src="images/shl/djurgarden.png" alt="Djurgården logga">Djurgården Hockey</a></li>
+						<li><a href="https://www.frolundaindians.com/"><img src="images/shl/frolunda.png" alt="Frölunda logga">Frölunda Indians</a></li>
+						<li><a href="https://www.farjestadbk.se/"><img src="images/shl/farjestad.png" alt="Färjestad logga">Färjestad BK</a></li>
+						<li><a href="https://www.hv71.se/"><img src="images/shl/hv71.png" alt="HV71 logga">HV71</a></li>
+						<li><a href="http://www.ikoskarshamn.se/"><img src="images/shl/oskarshamn.png" alt="Oskarshamn logga">IK Oskarshamn</a></li>
+						<li><a href="https://www.lhc.eu/"><img src="images/shl/linkoping.png" alt="Linköping logga">Linköping HC</a></li>
+						<li><a href="http://www.leksandsif.se/"><img src="images/shl/leksand.png" alt="Leksand logga">Leksands IF</a></li>
+						<li><a href="https://www.luleahockey.se/"><img src="images/shl/lulea.png" alt="Luleå logga">Luleå Hockey</a></li>
+						<li><a href="https://www.malmoredhawks.com/"><img src="images/shl/malmo.png" alt="Malmö logga">Malmö Redhawks</a></li>
+						<li><a href="https://www.roglebk.se/"><img src="images/shl/rogle.png" alt="Rögle logga">Rögle BK</a></li>
+						<li><a href="https://www.skellefteaaik.se/"><img src="images/shl/skelleftea.png" alt="Skellefteå logga">Skellefteå AIK</a></li>
+						<li><a href="https://www.vaxjolakers.se/"><img src="images/shl/vaxjo.png" alt="Växjö logga">Växjö Lakers</a></li>
+						<li><a href="https://www.orebrohockey.se/"><img src="images/shl/orebro.png" alt="Örebro logga">Örebro Hockey</a></li>
 					</ul>
 				</section>
+				<!--Sektion för highlight videos-->
 				<section class="highlights">
 					<h2>Höjdpunkter</h2>
+					<!--Sektion med videorna-->
 					<section class="highlightVideos">
+						<!--Iframe video some streamar en video från YouTube-->
 						<iframe src="https://www.youtube.com/embed/2VsxH5dyo1o"></iframe>
 						<iframe src="https://www.youtube.com/embed/lMmrY9jD8Bw"></iframe>
 						<iframe src="https://www.youtube.com/embed/vbQDJBDK0vQ"></iframe>

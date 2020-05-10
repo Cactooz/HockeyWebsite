@@ -166,6 +166,12 @@ table {
 	width: 65%; /*Change the width of the table*/
 	margin: auto; /*Use auto margin to center the tabel in the middle*/
 }
+/*The caption of all tables*/
+table caption {
+	font-size: 1.5rem; /*Make the font bigger*/
+	font-weight: bold; /*Make the text bold*/
+	margin-bottom: 20px; /*Add a margin at the bottom, down towards the table*/
+}
 /*The tabel and all rows should have a border*/
 table, tr {
 	border: var(--border);
@@ -270,6 +276,7 @@ footer li a:active {
 /*====================
 		LEAGUE MAIN
 =====================*/
+/*How the grid areas should be placed*/
 #league main {
 	display: grid;
 	grid-template-areas:
@@ -282,27 +289,32 @@ footer li a:active {
 #league main section.middle {
 	grid-area: middle;
 }
-#league main section.middle .newsImage {
-	width: 100%;
+/*Change the image in the middle section*/
+#league main section.middle img {
+	width: 100%; /*Make it take 100% of the sections width*/
+	/*Normal border and radius*/
 	border: var(--border);
 	border-radius: var(--border-radius);
 }
+/*Newsbutton in the middle on the league pages*/
 #league main section.middle .newsButton {
-	color: var(--black-font);
-	text-decoration: none;
-	background-color: var(--button-background);
-	padding: 10px 25px;
+	color: var(--black-font); /*Change text color*/
+	text-decoration: none; /*Remove underline*/
+	background-color: var(--button-background); /*Add a background color*/
+	padding: 10px 25px; /*Add padding (inside the border)*/
+	/*Add normal border, radius and shadow*/
 	border: var(--border);
 	border-radius: var(--border-radius);
 	box-shadow: var(--box-shadow);
 }
+/*Change the color of the news button if the keyboard focus on it or if the mouse hovers over it*/
 #league main section.middle .newsButton:focus, #league main section.middle .newsButton:hover {
 	color: var(--black-font);
 	background-color: var(--button-hover-background);
 }
 #league main section.teams {
 	grid-area: teams;
-	text-align: center;
+	text-align: center; /*Align the text in the middle*/
 }
 #league main section.teams ul {
 	display: flex;
@@ -346,16 +358,18 @@ footer li a:active {
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
+/*Iframe with youtube videos*/
 #league main section.highlightVideos iframe {
-	flex: 25%;
-	padding: 10px;
-	border: none;
-	height: 330px;
+	flex: 25%; /*Lets the flexboxes grow by 25% in the defined area if possible*/
+	margin: 10px; /*Add margin /outside of the border*/
+	border: none; /*Remove the default border*/
+	height: 330px; /*Change the height of the videos*/
 }
 
 /*====================
 		TIPS MAIN
 =====================*/
+/*How the grid areas should be placed*/
 #tips main {
 	display: grid;
 	grid-template-areas:
@@ -365,63 +379,78 @@ footer li a:active {
 }
 #tips main section {
 	grid-area: thanks;
-	margin: auto;
+	margin: auto; /*Use auto margin to center the section in the middle*/
 	text-align: center;
 }
+/*The forms on the tips page*/
 #tips form {
 	grid-area: form;
-	text-align: center;
+	text-align: center; /*Aling all text in the center*/
 }
+/*The fieldset in the form*/
 #tips form fieldset {
-	margin: 15px;
+	margin: 15px; /*Add some margin outside of the border*/
+	/*Use normal border and boxshadow*/
 	border-radius: var(--border-radius);
 	border: var(--border);
 	box-shadow: var(--box-shadow);
 }
+/*The legend of the fieldset in the form*/
 #tips form legend {
+	/*Bigger and bold text*/
 	font-size: 1.3rem;
 	font-weight: bold;
 }
+/*Change the style of the inputs, textareas and selects, but not the submitButton*/
 #tips form input:not(.submitButton), #tips form textarea, #tips form select {
-	padding: 5px;
-	margin: 5px;
-	border-radius: var(--border-radius);
+	padding: 5px; /*Add padding (inside the border*/
+	margin: 5px; /*Add margin (outside the border*/
+	border-radius: var(--border-radius); /*Round the border corners*/
 }
+/*Change the form inputs background color when they are in focus
+with the keyboard, but not the submitButton*/
 #tips form input:focus:not(.submitButton) {
-	background-color: var(--button-hover-background);
+	background-color: var(--button-focus-background);
 }
+/*Change the textarea size and add some margin*/
 #tips form textarea {
 	width: 95%;
 	height: 15rem;
 	margin-top: 10px;
 }
+/*For all optional things in the form, but not the submitbutton*/
 #tips form :optional:not(.submitButton) {
-	background: linear-gradient(90deg,rgba(255,255,255,1) 20%, rgba(202,246,255,1) 100%);
+	background: linear-gradient(90deg,rgba(255,255,255,1) 20%, rgba(202,246,255,1) 100%); /*Add a white to lightblue gradient*/
 }
-
+/*For all requred things in the form, but not the submitbutton*/
 #tips form :required:not(.submitButton) {
-	background: linear-gradient(90deg,rgba(255,255,255,1) 50%, rgb(214, 216, 255) 100%);
+	background: linear-gradient(90deg,rgba(255,255,255,1) 50%, rgb(214, 216, 255) 100%); /*Add a white to blue gradient*/
 }
+/*Change the style of the submitbutton*/
 #tips form input[type=submit] {
-	background-color: #4CAF50;
-	color: var(--white-font);
-	font-size: 1rem;
-	text-decoration: none;
+	background-color: #4CAF50; /*Change background color*/
+	color: var(--white-font); /*Font color*/
+	font-size: 1rem; /*Font size*/
+	text-decoration: none; /*Remove underline*/
 	padding: 5px;
 	margin: 4px 2px;
+	/*width and height changes for the button*/
 	width: 5rem;
 	height: 3rem;
+	/*Normal border radius and shadow*/
 	border-radius: var(--border-radius);
 	box-shadow: var(--box-shadow);
-	cursor: pointer;
+	cursor: pointer; /*Make the cursor show the pointer (click) when it goes over the button*/
 }
-#tips form input[type=submit]:hover {
-	background-color: rgb(51, 136, 54);
-}
+/*Change the background color of the submitbutton when its in foucs using the keyboard*/
 #tips form input[type=submit]:focus {
 	background-color: rgb(30, 71, 32);
 }
-
+/*Change the background color of the submitbutton when the mouse hovers over it*/
+#tips form input[type=submit]:hover {
+	background-color: rgb(51, 136, 54);
+}
+/*Inline svg*/
 #tips svg {
 	margin: auto; /*Use auto margin to center the svg in the middle*/
 	padding: 8ex; /*Add padding around the svg*/
@@ -442,27 +471,30 @@ footer li a:active {
 		transform: rotate(360deg); /*Rotate the smiley 360 degrees to the right*/
 	}
 }
-
+/*Affect a p tag that is a sibling to an adress element
+and add the content after the a tag*/
 #tips main address ~ p a::after {
-	content: ", MER HOCKEY!";
+	content: ", MER HOCKEY!"; /*Content to add after the a tag*/
 }
-
+/*The html video*/
 #tips video {
 	width: 80%;
 	border: var(--border);
 	border-radius: var(--border-radius);
 }
+/*Adress section with mail, phonenumber and adress*/
 #tips address {
 	text-align: left;
 }
-
+/*Change the desciptionlist in the adress section*/
 #tips address dl {
-	margin: auto;
-	width: 60%;
+	margin: auto; /*Use auto margin to center the desciptionlist in the middle*/
+	width: 60%; /*Change the width*/
+	/*Add normal background color boxshadow and border radius*/
 	background-color: var(--box-background);
 	box-shadow: var(--box-shadow);
 	border-radius: var(--border-radius);
-	padding: 1.5em;
+	padding: 1.5em; /*Add some padding inside of the border*/
 }
 /*====================
 	HISTORY MAIN
@@ -520,16 +552,16 @@ footer li a:active {
 
 /*Give the sections their grid area name*/
 #news main article:nth-child(2) { /*Get the second child of the section, the <h1> is the first child*/
-	grid-area: "article1";
+	grid-area: article1;
 }
 #news main article:nth-child(3) { /*Get the thrid child of the section*/
-	grid-area: "article2";
+	grid-area: article2;
 }
 #news main article:nth-child(4) { /*Get the forth child of the section*/
-	grid-area: "article3";
+	grid-area: article3;
 }
 #news main article:nth-child(5) {
-	grid-area: "article4";
+	grid-area: article4;
 }
 
 /*Change the width of the image and add the normal border*/
@@ -561,31 +593,31 @@ footer li a:active {
 
 /*Give the sections their grid area name*/
 #news main section:nth-child(2) { /*Get the second child of the section, the <h1> is the first child*/
-	grid-area: "goals";
+	grid-area: goals;
 }
 #news main section:nth-child(3) { /*Get the thrid child of the section*/
-	grid-area: "pass";
+	grid-area: pass;
 }
 #news main section:nth-child(4) { /*Get the forth child of the section*/
-	grid-area: "penalties";
+	grid-area: penalties;
 }
 #news main section:nth-child(5) {
-	grid-area: "plusminus";
+	grid-area: plusminus;
 }
 #news main section:nth-child(6) {
-	grid-area: "powerplay";
+	grid-area: powerplay;
 }
 #news main section:nth-child(7) {
-	grid-area: "boxplay";
+	grid-area: boxplay;
 }
 
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+			MEDIA QUERIES
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
 /*====================
-	MEDIA QUERIES
-=====================*/
-
-	/*TABLETS
-=================*/
+		/*TABLETS
+====================*/
 
 /*Changes how some things should be showed if the
 screen is wider than 700 pixels*/
@@ -625,8 +657,9 @@ screen is wider than 700 pixels*/
 	}
 }
 
-	/*PC & TV
-=================*/
+/*====================
+	/*PV & TV
+====================*/
 
 /*Changes how some things should be showed if the
 screen is wider than 1200 pixels*/
@@ -634,7 +667,6 @@ screen is wider than 1200 pixels*/
 
 	/*INDEX
 	===========*/
-
 	/*Change how the grid areas should be placed
 	and add a background image*/
 	#index main {
@@ -654,7 +686,6 @@ screen is wider than 1200 pixels*/
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 
-	
 	/*LEAGUE
 	===========*/
 	/*Change how the grid areas should be placed
@@ -666,7 +697,6 @@ screen is wider than 1200 pixels*/
 		"standings middle teams"
 		"highlights highlights highlights"
 	}
-
 	
 	/*TIPS
 	===========*/
@@ -681,11 +711,10 @@ screen is wider than 1200 pixels*/
 	#tips video {
 		width: 39%;
 	}
-	/*Change the width of all adress dl*/
+	/*Change the width of all dl children of adress*/
 	#tips address > dl {
 		width: 30%;
 	}
-
 	
 	/*HISTORY
 	===========*/
@@ -706,8 +735,8 @@ screen is wider than 1200 pixels*/
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas: 
 		"h1 h1"
-		"article article"
-		"article article";
+		"article1 article2"
+		"article3 article4";
 	}
 	
 	/*CHARTS

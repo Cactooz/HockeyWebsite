@@ -11,7 +11,7 @@
 	<body id="league">
 		<div class="gridContainer">
 			<header role="banner" aria-label="header banner">
-				<nav role="navigation" aria-label="main navigation">
+				<nav role="navigation" aria-label="global navigation">
 					<ul>
 						<li>
 							<a class="active">NHL</a>
@@ -24,6 +24,7 @@
 						</li>
 					</ul>
 				</nav>
+				<!--Lokal navigation, aria landmarks navigation och namn lokal navigation-->
 				<nav role="navigation" aria-label="lokal navigation">
 					<ul>
 						<li>
@@ -40,24 +41,28 @@
 			</header>
 			<main role="main">
 				<h1>NHL</h1>
+				<!--Sektion med tabell-->
 				<section class="standings">
-					<h2>Aktuell tabell</h2>
+					<!--Tabell-->
 					<table>
+						<!--Tabell rubrik-->
 						<caption>NHL tabell 2019/2020</caption>
+						<!--Tabellhuvud med column rubriker-->
 						<thead>
-							<tr>
-								<th scope="col">Plats</th>
+							<tr> <!--En rad i tabellhubudet-->
+								<th scope="col">Plats</th> <!--Ett tabell huvud element, scope att headern är för en column och inte en rad-->
 								<th scope="col">Lag</th>
 								<th scope="col">GP</th>
 								<th scope="col">+/-</th>
 								<th scope="col">P</th>
 							</tr>
 						</thead>
+						<!--Tabell body med information-->
 						<tbody>
-							<tr>
-								<td>1</td>
-								<td>Luleå</td>
-								<td>52</td>
+							<tr> <!--En rad i tabell bodyn-->
+								<td>1</td> <!--Ett tabell element i den första kolumnen-->
+								<td>Luleå</td> <!--Ett tabell element i den andra kolumnen-->
+								<td>52</td> <!--Ett tabell element i den tredje kolumnen-->
 								<td>53</td>
 								<td>106</td>
 							</tr>
@@ -163,16 +168,22 @@
 						</tfoot>			
 					</table>
 				</section>
+				<!--Sektion för mitten med senaste nyheten-->
 				<section class="middle">
+					<!--Huvudrubrik i sektionen-->
 					<h2>Senaste nyheten</h2>
-					<img src="images/news/andersen-nhl.jpg" alt="Senaste nyheten bild" class="newsImage">
+					<img src="images/news/andersen-nhl.jpg" alt="Bild på Andersen när han står i mål">
+					<!--Underrukrik i sektionen-->
 					<h3>Andersen ser ut att hålla sig i form medan han bor hos Matthews i Arizona</h3>
 					<p>Maple Leafs målvakt är redo att sätta på skydd, ta bilder på sportbanan i lagkamratens hus</p>
-					<a href="nhl/nyheter.html" class="newsButton">Läs mer nyheter</a>
+					<a href="nhl/nyheter.html" class="newsButton">Läs mer nyheter</a> <!--En knapp som leder dig till nyheter sidan för ligan-->
 				</section>
+				<!--Sektion för lag-->
 				<section class="teams">
 					<h2>Lag 2019/2020</h2>
+					<!--En osorterad lista med alla lag-->
 					<ul>
+						<!--Listitem som innehåller en bild och lagets namn, både bilden och texten ligger i en länk som leder till lagets hemsida-->
 						<li><a href="https://www.nhl.com/hurricanes"><img src="images/nhl/12_dark.svg" alt="Carolina Hurricanes logo"> Carolina Hurricanes</a></li>
 						<li><a href="https://www.nhl.com/bluejackets"><img src="images/nhl/29_dark.svg" alt="Columbus Blue Jackets logo">Columbus Blue Jackets</a></li>
 						<li><a href="https://www.nhl.com/devils"><img src="images/nhl/1_dark.svg" alt="New Jersey Devils logo">New Jersey Devils</a></li>
@@ -206,12 +217,15 @@
 						<li><a href="https://www.nhl.com/goldenknights"><img src="images/nhl/vegas.png" alt="Vegas Golden Knights logo">Vegas Golden Knights</a></li>
 					</ul>
 				</section>
+				<!--Sektion för highlight videos-->
 				<section class="highlights">
 					<h2>Höjdpunkter</h2>
+					<!--Sektion med videorna-->
 					<section class="highlightVideos">
-						<iframe src="https://www.youtube.com/embed/d1d2pv3vjKA"></iframe>
-						<iframe src="https://www.youtube.com/embed/yTOJ8cfpfzM"></iframe>
-						<iframe src="https://www.youtube.com/embed/hoMp04olq4A"></iframe>
+						<!--Iframe video some streamar en video från YouTube-->
+						<iframe src="https://www.youtube.com/embed/cOo1jofZAAA"></iframe>
+						<iframe src="https://www.youtube.com/embed/Ih7yQaQes28"></iframe>
+						<iframe src="https://www.youtube.com/embed/v-LjLA0GY24"></iframe>
 					</section>
 				</section>
 			</main>

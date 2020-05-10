@@ -1,33 +1,43 @@
-<!DOCTYPE html>
-<html lang="sv">
+<!DOCTYPE html> <!--Beskriver vilken version av HTML som används, html = HTML5-->
+<!--Början av html-->
+<html lang="sv"> <!--Säger att sidan är skriven på svenska, används för skärmläsare-->
+	<!--Början av head, det som händer i bakgrunder-->
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="UTF-8"> <!--Tekenkodning UTF-8-->
 		<title>Hockey Fantaster</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="style.css" rel="stylesheet">
-		<link href="images/hockey_fantaster_icon.ico" rel="icon">
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> <!--Kompabillitet för mindre skärmar, gör sakerna större så de är lättare att se-->
+		<link href="style.css" rel="stylesheet"> <!--Länka in css dokumentet-->
+		<link href="images/hockey_fantaster_icon.ico" rel="icon"> <!--Favicon för hemsidan-->
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> <!--Läser in en CDN font-->
 	</head>
+	<!--Början av body, det som användaren ser, sidan har id index-->
 	<body id="index">
-		<div class="gridContainer">
+		<div class="gridContainer"> <!--Container för grid på hemsidan-->
+			<!--Början av header, aria landmarks banner och namn header banner-->
 			<header role="banner" aria-label="header banner">
-				<nav role="navigation" aria-label="main navigation">
+				<!--Början globala nav navbaren, aria landmarks navigation och namn global navigation-->
+				<nav role="navigation" aria-label="global navigation">
+					<!--Osorterad lista-->
 					<ul>
+						<!--List item-->
 						<li>
-							<a href="nhl.html">NHL</a>
+							<a href="nhl.html">NHL</a> <!--Länk till nhl.html sidan-->
 						</li>
 						<li>
+							<!--Bild med logga, alt text beskriver vad bilden föreställer-->
 							<img src="images/hockey_fantaster_logo.png" alt="Hockey Fantaster Logga">
 						</li>
 						<li>
-							<a href="shl.html">SHL</a>
+							<a href="shl.html">SHL</a> <!--Länk till shl.html sidan-->
 						</li>
 					</ul>
 				</nav>
 			</header>
 			<main role="main">
-				<h1>Hockey Fantaster</h1>
+				<h1>Hockey Fantaster</h1> <!--Huvudrubrik-->
+				<!--Section med information om NHL-->
 				<section class="nhl">
+					<!--Rubrik för sektionen-->
 					<h2>NHL</h2>
 					<p>
 						National Hockey League (NHL), är den högsta ligan i det nordamerikanska ishockeysystemet och kvalitetsmässigt världens högst rankade. Det lag som har varit mest framgångsrikt är Montreal Canadiens med totalt 24 Stanley Cup-titlar, varav 23 sedan NHL bildades. Regerande mästare är St. Louis Blues.
@@ -35,36 +45,52 @@
 						Lagen spelar 82 matcher i grundserien mellan oktober och april för att avgöra vilka 16 klubbar (åtta från Eastern Conference och åtta från Western Conference) som spelar slutspel mellan april och juni och har chansen till att vinna Stanley Cup-pokalen.
 						Ligan är stängd från nedflyttning och därav har medlemsklubbarna samarbetsavtal med de klubbar som spelar i American Hockey League och ECHL för att utveckla sig inom den nordamerikanska ishockeyn. De klubbar som hamnar sist i grundserien får sedan fördelar vid den årliga draften om vem som får välja först i NHL Entry Draft och på så sätt jämnas lagens styrka ut med tiden.
 					</p>
-					<a href="nhl.html"><img src="https://4.bp.blogspot.com/-apY43kDEHBo/VC1SeawsrfI/AAAAAAAAFNk/Mr8OICejar4/s1600/Logo%2BNHL.png" alt="NHL logga"></a>
+					<!--Bild som länkar till sidan nhl.html-->
+					<a href="nhl.html"><img src="images/nhl.png" alt="NHL logga"></a>
 				</section>
+				<!--Section med information om SHL-->
 				<section class="shl">
+					<!--Rubrik för sektionen-->
 					<h2>SHL</h2>
+					<!--Paragraf med text-->
 					<p>
 						Svenska hockeyligan, officiellt SHL (tidigare Elitserien i ishockey), är den högsta nivån i ishockeyns seriespel för herrar i Sverige. Ligan har spelats sedan säsongen 1975/1976. Inför säsongen 2013/2014 bytte ligan namn till SHL (Svenska hockeyligan).
 						Series som består av 14 lag spelar 52 matcher vardera innan de sex främst placerade lagen är direktkvalifierade till SM-kvartsfinal. Lag sju möter sedan lag tio medan lag åtta möter lag nio i åttondelsfinaler i bäst av tre matcher. Lag elva och tolv har spelat färdigt för säsongen medan lag tretton och fjorton får spela direktkval till SHL mot två lag från HockeyAllsvenskan.
 						I SM-slutspelet spelas kvartsfinal, semifinal och final i bäst av sju matcher. Det lag som vinner SM-finalen tituleras svensk mästare och tilldelas LeMat-pokalen.
 						Räknar man med alla åren sedan första svenska mästerskapet spelades 1922 har Djurgårdens IF flest SM-tecken, före Brynäs IF, Färjestad BK och IK Göta. Färjestad BK är det lag som leder SHL:s maratontabell och innehar flest SM-titlar sedan säsongen 1975/1976, följt av Djurgårdens IF och Frölunda HC.
 					</p>
-					<a href="shl.html"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Swedish_Hockey_League_logo.svg/1200px-Swedish_Hockey_League_logo.svg.png" alt="SHL logga"></a>
+					<!--Bild som länkar till sidan shl.html-->
+					<a href="shl.html"><img src="images/shl.png" alt="SHL logga"></a>
 				</section>
+				<!--Section med information om övriga ligor-->
 				<section class="other">
+					<!--Rubrik för sektionen-->
 					<h2>Övriga ligor</h2>
 					<div>
+						<!--Delsektion för KHL-->
 						<section>
+							<!--Sektionens rubrik-->
 							<h3>KHL</h3>
+							<!--Paragraf med text-->
 							<p>
 								Kontinentala hockeyligan, är en ishockeyliga, bildad 2008 i Eurasien. I Ryssland ersatte KHL den tidigare ryska superligan.
 								KHL-säsonger avslutas med slutspelet om Gagarin Cup (Kubok Gagarina). Trofén är döpt efter kosmonauten Jurij Gagarin, den första människan i rymden. Den sjunde och avgörande matchen i finalspelet var för 2009 planerad till den 12 april, årsdagen för Gagarins rymdresa 1961. KHL åtnjuter politiskt stöd och finansieras av delstatliga energijätten Gazprom i Ryssland. Tanken är att skapa en resursstark, multinationell ishockeyliga för att konkurrera med nordamerikanska NHL om de bästa spelarna.
 							</p>
 						</section>
+						<!--Delsektion för Liiga-->
 						<section>
+							<!--Sektionens rubrik-->
 							<h3>Liiga</h3>
+							<!--Paragraf med text-->
 							<p>
 								Liiga, även känt som FM-ligan, är en professionell ishockeyserie, hade premiär säsongen 1975/1976 då den ersatte FM-serien i ishockey, som i huvudsak var en amatörserie. De första säsongerna var FM-ligan halvprofessionell. Ytterst få spelare i Finland under 1970-talet hade som heltidsjobb att spela ishockey. De första elva säsongerna kom omkring 900 000 åskådare per säsong och tittade på grundseriematcherna. Säsongen 1986/1987 utökades antalet matcher i grundserien för varje lag från 36 till 44, och säsongen 2000/2001 till 56. Serien utökades till 12 lag säsongen 1988/1989. Under 1990-talet ökade intresset för ishockey i Finland, bland annat genom framgångar för Finlands herrlandslag i ishockey. FM-ligans åskådarantal per säsong ökade till omkring 1,8 miljoner.
 							</p>
 						</section>
+						<!--Delsektion för Extraliga-->
 						<section>
+							<!--Sektionens rubrik-->
 							<h3>Extraliga</h3>
+							<!--Paragraf med text-->
 							<p>
 								Extraliga heter den högsta divisionen inom ishockey i Tjeckien. Namnet på serien ändras ibland beroende på sponsor. Säsongen 2006/2007 var namnet O2 Extraliga. Tidigare har den även haft namnen Tipsport Extraliga, Český Telecom Extraliga samt Staropramen Extraliga. Serien startade 1993 då staten Tjeckoslovakien upplöstes.
 								14 lag spelar i ligan, och de tio bäst placerade lagen kvalificerar sig i slutet av säsongen till slutspelet där den nationella mästaren koras. De sex bästa lagen kvalificerar sig direkt till kvartsfinalen som avgörs i formatet bäst av sju matcher (vilket även semifinal och final gör).
@@ -73,13 +99,19 @@
 					</div>
 				</section>
 			</main>
+			<!--Början av footer-->
 			<footer>
+				<!--Div för Copyright text-->
 				<div>
 					<p>© Copyright Hugo Bachér 2020</p>
 				</div>
+				<!--Section med sido länkar-->
 				<section>
+					<!--Osorterad lista-->
 					<ul>
+						<!--Listitem-->
 						<li>
+							<!--Länk till en sida-->
 							<a href="nhl.html">NHL</a>
 						</li>
 						<li>
