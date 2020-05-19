@@ -454,6 +454,7 @@ with the keyboard, but not the submitButton*/
 #tips form input[type=submit]:hover {
 	background-color: rgb(51, 136, 54);
 }
+
 /*Inline svg*/
 #tips svg {
 	margin: auto; /*Use auto margin to center the svg in the middle*/
@@ -463,16 +464,29 @@ with the keyboard, but not the submitButton*/
 	width: 200px; /*Width of the svg*/
 	height: 200px; /*Height of the svg*/
 }
-/*Yellow fill for svgs*/
-#tips svg .svgYellow {
+/*Yellow fill for face in the smiley svg*/
+#tips svg .svgFace {
 	fill: yellow; /*Fill color*/
+	cx: 100; /*X coordinate of a svg object*/
+	cy: 100; /*Y coordinate of a svg object*/
+	r: 100; /*Radius of a svg cricle*/
 }
-/*Black fill for svgs*/
-#tips svg .svgBlack {
+/*Black fill for eyes in the smiley svg*/
+#tips svg .svgEye {
 	fill: black; /*Fill color*/
+	r: 20; /*Radius of a svg cricle*/
+	cy: 65; /*Y coordinate of a svg object*/
 }
-/*Black stroke for svgs*/
-#tips svg .svgmouth {
+/*Left eye in the smiley svg*/
+#tips svg .svgLeftEye {
+	cx: 60; /*X coordinate of a svg object*/
+}
+/*Right eye in the smiley svg*/
+#tips svg .svgRightEye {
+	cx: 140; /*X coordinate of a svg object*/
+}
+/*Black stroke for mouth in the smiley svg*/
+#tips svg .svgMouth {
 	stroke: black; /*Stroke color*/
 	stroke-width: 10px; /*Width of the stroke*/
 	fill: none; /*Fill color*/
