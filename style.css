@@ -469,12 +469,10 @@ with the keyboard, but not the submitButton*/
 	fill: yellow; /*Fill color*/
 	cx: 100; /*X coordinate of a svg object*/
 	cy: 100; /*Y coordinate of a svg object*/
-	r: 100; /*Radius of a svg cricle*/
 }
 /*Black fill for eyes in the smiley svg*/
 #tips svg .svgEye {
 	fill: black; /*Fill color*/
-	r: 20; /*Radius of a svg cricle*/
 	cy: 65; /*Y coordinate of a svg object*/
 }
 /*Left eye in the smiley svg*/
