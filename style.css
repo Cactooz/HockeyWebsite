@@ -3,6 +3,7 @@
 =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
 /*CSS variables for colors and more*/
+	/*Validator is outdated and is putting error on css variables but it's not a problem*/
 :root {
 	--background: rgb(219, 229, 235); /*Main background color*/
 	--header-footer-background: rgba(20, 20, 20, 0.9); /*Color for header and footer background*/
@@ -467,6 +468,7 @@ with the keyboard, but not the submitButton*/
 /*Yellow fill for face in the smiley svg*/
 #tips svg .svgFace {
 	fill: yellow; /*Fill color*/
+	/*Validator is outdated and is putting error on cx and cy but it's not a problem*/
 	cx: 100; /*X coordinate of a svg object*/
 	cy: 100; /*Y coordinate of a svg object*/
 }
