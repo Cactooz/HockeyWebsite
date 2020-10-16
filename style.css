@@ -3,7 +3,7 @@
 =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
 /*CSS variables for colors and more*/
-	/*Validator is outdated and is putting error on css variables but it's not a problem*/
+/*Validator is outdated and is putting error on css variables but it's not a problem*/
 :root {
 	--background: rgb(219, 229, 235); /*Main background color*/
 	--header-footer-background: rgba(20, 20, 20, 0.9); /*Color for header and footer background*/
